@@ -1,0 +1,65 @@
+<html>
+<head>
+<title>Jangle help</title>
+</head>
+<body>
+
+<h1>Jangle: Snmp Browser</h1>
+
+<p>The Jangle Snmp browser is a graphical utility to browse through and
+display the various statistics exported via snmp.</p>
+
+<p>At the top of the window you can enter a hostname or IP address of
+the device you wish to query, the community string to be used, and
+alter the port number the server is listening on.</p>
+
+<h2>The left panel</h2>
+
+<p>The left panel contains two tabs which show a either a list or a
+tree view of the available OIDs.</p>
+
+<h2>The right panel</h2>
+
+<p>The right panel contains tabs displaying the available data.</p>
+
+<ul>
+
+<li>Details - shows the value of the currently selected OID, and a
+chart if it's a numeric type.</li>
+
+<li>About - shows information about the currently selected OID if it
+can be obtained from installed MIB files.</li>
+
+<li>Siblings - shows details of siblings of the current OID (different
+instances with the same parent, usually representing multiple instances
+of the same attribute), and a chart if they are of a numeric
+type.</li>
+
+<li>Cousins - shows details of cousins of the current OID (same instance
+with a common grandparent, usually representing the available
+attributes of a given object), and a chart of those that are a numeric
+type.</li>
+
+</ul>
+
+<h2>The toolbar</h2>
+
+<p>The toolbar contains a small number of menus.</p>
+
+<ul>
+
+<li>File - allows you to exit the Jangle Snmp Browser, create a new
+browser, and load MIB files from a non-standard location.</li>
+
+<li>Update every - allows you to change how rapidly the statistics are
+updated. Note that some snmp servers will only update their data every
+30 seconds, leading to anomalous behaviour if you update more
+frequently.</li>
+
+<li>Help - shows this help file, and the CDDL license that this
+software is licensed under.</li>
+
+</ul>
+
+</body>
+</html>

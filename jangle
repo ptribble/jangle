@@ -1,0 +1,69 @@
+#!/bin/sh
+#
+# run the jangle utilities
+#
+
+JKDIR=`dirname $0`
+LIBDIR=${JKDIR}/lib
+JARLIBDIR=${LIBDIR}/java
+JAVA=/usr/bin/java
+
+#
+# if installed then the locations change
+#
+INSTALLED=false
+if [ "$INSTALLED" = "true" ]; then
+    JARLIBDIR=/usr/share/jangle
+fi
+
+usage() {
+    echo "Usage: jangle subcommand [options]"
+    echo "Available subcommands:"
+    echo " browser (the interactive snmp browser)"
+    echo " snmpwalk (print the results from localhost)"
+    echo " snmpping (just ping localhost)"
+}
+
+case $# in
+0)
+    usage
+    exit 1
+    ;;
+*)
+    SUBCOMMAND=$1
+    shift
+    ;;
+esac
+
+JCJAR=${JARLIBDIR}/jcommon-1.0.21.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.0.17.jar
+JINGLEJAR=${JARLIBDIR}/jingle.jar
+JUMBLEJAR=${JARLIBDIR}/jumble.jar
+JANGLEJAR=${JARLIBDIR}/jangle.jar
+SNMPJAR=${JARLIBDIR}/snmp.jar
+MIBBLEJARS=${JARLIBDIR}/grammatica-1.4.jar:${JARLIBDIR}/mibble-2.3.jar
+ALLJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JANGLEJAR}:${SNMPJAR}:${MIBBLEJARS}
+
+case $SUBCOMMAND in
+
+'browser')
+    $JAVA -Dswing.aatext=true -jar ${JANGLEJAR}
+    exit 0
+    ;;
+
+'snmpwalk')
+    $JAVA -cp ${ALLJARS} uk.co.petertribble.jangle.SnmpWalk $*
+    exit 0
+    ;;
+
+'snmpping')
+    $JAVA -cp ${ALLJARS} uk.co.petertribble.jangle.SnmpPing $*
+    exit 0
+    ;;
+
+*)
+    usage
+    exit 1
+    ;;
+
+esac

@@ -1,0 +1,168 @@
+0.13
+
+Updated JFreeChart to 1.0.17.
+
+NOTE: As a result, jangle now reguires Java 1.6 or later
+
+Format other date values as dates, and tidy up the display format
+
+Update jingle
+
+Add application icon
+
+Add desktop file
+
+Add man page
+
+Package creation
+
+Load MIBs file selection dialog custom prompt
+
+0.12
+
+Update license details
+
+Don't show the hex values for an OctetString
+
+Subsequent reloads don't duplicate the OID tree
+
+Old graphics are cleared correctly
+
+Detail display better formatted
+
+Sibling list displays correctly when first displayed with a chart
+
+For snmpping, can specify community, oid, and host(s) on the command line
+
+hrSWInstalledDate displays as dates
+
+Fix some help typos
+
+Don't show sibling or cousin tabs if there are no siblings or cousins
+
+0.11
+
+Update jingle
+
+Bypass a rogue IOException in SnmpController
+
+Cousins table is sorted
+
+Cousins table includes non-chartable entries
+
+0.10
+
+Updated jfreechart
+
+Fix SnmpResources to keep Java 7 happy
+
+refactor: getParentOID() was implemented 3 times
+
+fix Timer ambiguity
+
+pass jstyle
+
+Chart Age now customizable
+
+For cousin and sibling tabs, the data above the chart is now a table
+that updates along with the chart
+
+You can select what to graph on the cousin and sibling charts.
+
+0.09
+
+Updated jumble
+
+@author tags, improve javadoc
+
+Don't chart things that obviously don't make sense
+
+prettifyOID can take an SnmpObject, no need to call toString
+
+0.08
+
+Updated jingle and jumble.
+
+code cleanups
+
+Siblings tab shows a combined chart of all the siblings.
+
+Cousins tab. Cousins are the same instance of a common grandparent;
+normally they're different attributes of the same object, so seeing
+them all together is very useful.
+
+Actually initialise charts with the correct update interval
+
+Cousins tab shows a combined chart of all the (chartable) cousins
+
+Update every, and an accelerator, and add back the 5 second update.
+
+Can chart SnmpObjects, not just Strings.
+
+Chart labels use prettified OIDs
+
+0.07
+
+pmd cleanups, pmd subcommand added to build script
+
+browser list and tree show OIDs by name - much more user-friendly
+
+0.06
+
+Updated jingle to 1.3
+
+Allow selection of ports other than the default 161
+
+0.05
+
+Updated to more recent snmp.jar
+
+Find siblings and cousins
+
+Only show a chart if it's a numerical type
+
+Display cleanups
+
+snmpwalk subcommand
+
+0.04
+
+Updated swing-worker
+
+Updated jfreechart
+
+Fixed chart axes
+
+Most of the fixes made to my other code have been implemented here
+
+javadoc mostly complete
+
+0.03
+
+MIBs loaded in a SwingWorker, so startup appears much quicker
+
+Snmp tree walked in a SwingWorker, so we can give feedback and the gui
+remains responsive
+
+Ability to load MIBs from a user-specified directory
+
+First pass at a tree view
+
+Better error handling (ie more than none)
+
+General spit and polish
+
+0.02
+
+Name changed to jangle
+
+Added /usr/share/snmp/mibs as a possible location to look for mib
+files. (That's where they are on Ubuntu 8.10, at least.)
+
+Cleaned up the snmp-gui script
+
+Default polling interval set to 30s
+
+0.01
+
+Initial release

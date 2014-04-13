@@ -1,0 +1,19 @@
+Bugs/Features:
+
+Suport other snmp versions
+
+Derive whether it's a value or a rate
+
+Sets and filters.
+
+Simple graph: given a host and an OID, graph it.
+
+Multiple server support - graph same thing from different hosts
+
+Need ability to keep graphing one thing and go look at something
+else. Maybe some sort of dock where the graphs you're viewing get
+stored.
+
+Better mib parser
+
+If the MIB specifies a range, use that to set the y-range of the chart

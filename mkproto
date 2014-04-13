@@ -1,0 +1,65 @@
+#!/bin/sh
+#
+# generate a prototype file for input to pkgmk
+#
+# feed to pkgmk like so:
+#  pkgmk -d /tmp -f tt -r `pwd` TRIBjangle
+#
+
+JARDIR=usr/share/jangle
+OWNER="root bin"
+SYSOWNER="root sys"
+
+PKGTYPE="standalone"
+
+echo "i pkginfo=./pkginfo"
+
+if [ "X$2" = "Xdeps" ]; then
+  JFCVERS="1.0.17"
+  JFCPKGVER="1017"
+  PKGTYPE="withdeps"
+cat > depend <<EOF
+P TRIBjfreechart-${JFCPKGVER}
+EOF
+  echo "i depend=./depend"
+fi
+
+echo "f none /usr/bin/jangle=jangle.installed 0755 ${OWNER}"
+echo "d none /usr/share 0755 ${SYSOWNER}"
+echo "d none /usr/share/jangle 0755 ${OWNER}"
+echo "d none /usr/share/man 0755 ${OWNER}"
+echo "f none /usr/share/man/man1/jangle.1=man1/jangle.1 0644 ${OWNER}"
+echo "f none /usr/share/jangle/README=./README 0644 ${OWNER}"
+
+#
+# desktop files and their icons
+#
+for thisapp in jangle
+do
+  echo "f none /usr/share/applications/${thisapp}.desktop=./${thisapp}.desktop 0644 ${OWNER}"
+  echo "f none /usr/share/pixmaps/${thisapp}.png=./pixmaps/${thisapp}.png 0644 ${OWNER}"
+done
+
+
+#
+# if depending on installed packages, then:
+#   jcommon jfreechart come from TRIBjfreechart-###
+#
+if [ "X$PKGTYPE" = "Xstandalone" ]; then
+  for path in lib/java/*
+  do
+	pname=`basename $path`
+	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
+  done
+else
+  for path in lib/java/jcommon* lib/java/jfreechart*
+  do
+	pname=`basename $path`
+	echo "s none /${JARDIR}/${pname}=../jfreechart-${JFCVERS}/${pname}"
+  done
+  for path in lib/java/s* lib/java/m* lib/java/g* lib/java/jingle.jar lib/java/jangle.jar lib/java/jumble.jar
+  do
+	pname=`basename $path`
+	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
+  done
+fi

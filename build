@@ -1,0 +1,79 @@
+#!/bin/sh
+#
+# Usage:
+#
+# ./build -doc
+#    Generates the javadoc
+#
+# ./build
+#    Builds all the java classes, and recompiles the native library.
+#
+# If you have the ON build tools installed, then jstyle gets run.
+#
+
+PATH=/usr/jdk/instances/jdk1.6.0/bin:$PATH
+export PATH
+
+JKDIR=`dirname $0`
+LIBDIR=${JKDIR}/lib
+ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
+JARLIBDIR=${LIBDIR}/java
+JAVA=java
+
+JCJAR=${JARLIBDIR}/jcommon-1.0.21.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.0.17.jar
+JANGLEJAR=${JARLIBDIR}/jangle.jar
+JINGLEJAR=${JARLIBDIR}/jingle.jar
+JUMBLEJAR=${JARLIBDIR}/jumble.jar
+SWJAR=${JARLIBDIR}/swing-worker-1.2.jar
+SNMPJAR=${JARLIBDIR}/snmp.jar
+MIBBLEJARS=${JARLIBDIR}/grammatica-1.4.jar:${JARLIBDIR}/mibble-2.3.jar
+BUILDJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${SWJAR}:${SNMPJAR}:${MIBBLEJARS}
+
+#
+# run
+# ./build pmd
+# to use this, these checks should always pass, it's a regression if
+# any warnings appear. Of course, you must have pmd in your path
+#
+PMDCHECKS="braces,imports,unusedcode,typeresolution,coupling,clone,sunsecure,finalizers,strings,migrating"
+
+case $1 in
+-doc)
+	rm -fr javadoc
+	mkdir javadoc
+	javadoc -classpath $BUILDJARS:. -d javadoc uk.co.petertribble.jangle
+	exit 0
+	;;
+clean)
+	rm -f `find uk/co -name '*.class'`
+	rm -f `find . -name '*~'`
+	rm -fr javadoc
+	exit 0
+	;;
+pmd)
+	pmd uk $PMDCHECKS
+	exit 0
+	;;
+packages)
+	cat jangle | sed s:INSTALLED=false:INSTALLED=true: > jangle.installed
+	./mkproto i386 $2 > prototype
+	pkgmk -d /tmp -f prototype -r `pwd` TRIBjangle
+	pkgtrans -s /tmp /tmp/TRIBjangle.pkg TRIBjangle
+	ls -lh /tmp/TRIBjangle.pkg
+	rm prototype
+	rm jangle.installed
+	rm -f depend
+	exit 0
+	;;
+esac
+
+XFLAGS="-Xlint -Xlint:-serial"
+
+if [ -x /opt/onbld/bin/jstyle ]; then
+	/opt/onbld/bin/jstyle `find uk/co/petertribble -name '*.java'`
+fi
+
+javac ${XFLAGS} -classpath .:${BUILDJARS} uk/co/petertribble/jangle/*.java
+
+jar -cmf jangle.manifest ${JANGLEJAR} pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties `find uk/co -name '*.class'`
