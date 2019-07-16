@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2019 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -56,7 +56,7 @@ public class SnmpList {
      *
      * @return a List of all SnmpObjects starting from the given oid
      *
-     * @throws SnmpException
+     * @throws SnmpException if an error occurs
      */
     public List <SnmpObject> getList(String startOID) throws SnmpException {
 	oidList = new ArrayList <SnmpObject> ();
