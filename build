@@ -11,7 +11,7 @@
 # If you have the ON build tools installed, then jstyle gets run.
 #
 
-PATH=/usr/jdk/instances/jdk1.6.0/bin:$PATH
+PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
 
 JKDIR=`dirname $0`

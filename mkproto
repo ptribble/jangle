@@ -29,7 +29,7 @@ echo "d none /usr/share 0755 ${SYSOWNER}"
 echo "d none /usr/share/jangle 0755 ${OWNER}"
 echo "d none /usr/share/man 0755 ${OWNER}"
 echo "f none /usr/share/man/man1/jangle.1=man1/jangle.1 0644 ${OWNER}"
-echo "f none /usr/share/jangle/README=./README 0644 ${OWNER}"
+echo "f none /usr/share/jangle/README.md=./README.md 0644 ${OWNER}"
 
 #
 # desktop files and their icons
