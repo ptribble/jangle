@@ -37,7 +37,6 @@ import java.awt.event.*;
 import javax.swing.event.*;
 import uk.co.petertribble.jingle.JingleTextPane;
 import org.jfree.chart.ChartPanel;
-import org.jdesktop.swingworker.SwingWorker;
 
 /**
  * A panel displaying the snmp statistics that are available as a list or

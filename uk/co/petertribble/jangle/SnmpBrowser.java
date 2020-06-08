@@ -32,7 +32,6 @@ import java.awt.*;
 import uk.co.petertribble.jingle.JingleMultiFrame;
 import uk.co.petertribble.jingle.JingleInfoFrame;
 import uk.co.petertribble.jingle.JingleIntTextField;
-import org.jdesktop.swingworker.SwingWorker;
 
 /**
  * A graphical utility to browse and display snmp statistics. It allows the
