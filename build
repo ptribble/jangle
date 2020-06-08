@@ -6,7 +6,7 @@
 #    Generates the javadoc
 #
 # ./build
-#    Builds all the java classes, and recompiles the native library.
+#    Builds all the java classes
 #
 # If you have the ON build tools installed, then jstyle gets run.
 #
@@ -20,8 +20,8 @@ ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
 JARLIBDIR=${LIBDIR}/java
 JAVA=java
 
-JCJAR=${JARLIBDIR}/jcommon-1.0.21.jar
-JFJAR=${JARLIBDIR}/jfreechart-1.0.17.jar
+JCJAR=${JARLIBDIR}/jcommon-1.0.24.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.5.0.jar
 JANGLEJAR=${JARLIBDIR}/jangle.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
