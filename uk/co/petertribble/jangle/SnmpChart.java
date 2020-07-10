@@ -290,7 +290,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      */
     public void updateAccessory() {
 	double value;
-	long newsnap = (new Date()).getTime();
+	long newsnap = new Date().getTime();
 	// loop over all oids
 	for (String stat : tsmap.keySet()) {
 	    try {

@@ -44,7 +44,7 @@ public class SnmpUtil {
      */
     public static String getParentOID(String s) {
 	int i = s.lastIndexOf('.');
-	return (i < 0) ? null : s.substring(0, i);
+	return i < 0 ? null : s.substring(0, i);
     }
 
     /**

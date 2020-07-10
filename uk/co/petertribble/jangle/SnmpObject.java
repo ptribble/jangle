@@ -109,7 +109,7 @@ public class SnmpObject {
      */
     public String getTypeString() {
 	String s = getType();
-	return (s.startsWith("snmp.SNMP")) ? s.substring(9) : s;
+	return s.startsWith("snmp.SNMP") ? s.substring(9) : s;
     }
 
     /**
@@ -138,7 +138,7 @@ public class SnmpObject {
      * @return the numerical value of this object
      */
     public BigInteger getNumber() {
-	return (value instanceof SNMPInteger)
+	return value instanceof SNMPInteger
 	    ? (BigInteger) value.getValue() : BigInteger.ZERO;
     }
 }

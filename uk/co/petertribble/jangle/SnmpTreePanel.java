@@ -589,7 +589,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
     // handle ListSelectionListener events
     public void valueChanged(ListSelectionEvent e) {
-        if (!e.getValueIsAdjusting() && (slist.getSelectedIndex() != -1)) {
+        if (!e.getValueIsAdjusting() && slist.getSelectedIndex() != -1) {
 	    Object o = slist.getSelectedValue();
 	    if (o instanceof SnmpObject) {
 		showObject((SnmpObject) o);
