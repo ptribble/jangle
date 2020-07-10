@@ -69,9 +69,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
     private Exception savederror;
 
-    private JList slist;
+    private JList <SnmpObject> slist;
     private JProgressBar jpb;
-    private DefaultListModel model;
+    private DefaultListModel <SnmpObject> model;
     private JTabbedPane jtpl;
     private JTabbedPane jtpr;
     private JTree stree;
@@ -110,9 +110,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	setLayout(new BorderLayout());
 
 	jtpl = new JTabbedPane();
-	model = new DefaultListModel();
+	model = new DefaultListModel <SnmpObject> ();
 	oidList = new ArrayList <SnmpObject> ();
-	slist = new JList(model);
+	slist = new JList <SnmpObject> (model);
 	slist.addListSelectionListener(this);
 	slist.setCellRenderer(new SnmpListCellRenderer());
 	jtpl.add(SnmpResources.getString("SNMP.LIST.TEXT"),
