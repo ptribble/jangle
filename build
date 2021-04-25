@@ -36,7 +36,7 @@ BUILDJARS=${JCJAR}:${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${SNMPJAR}:${MIBBLEJARS}
 #
 # new PMD version has rulesets
 #
-PMDRULES="imports typeresolution clone finalizers sunsecure unusedcode braces migrating strictexception unnecessary"
+PMDRULES="basic braces clone finalizers imports migrating strictexception sunsecure typeresolution unnecessary unusedcode"
 PMDCATRULES="security"
 
 case $1 in
