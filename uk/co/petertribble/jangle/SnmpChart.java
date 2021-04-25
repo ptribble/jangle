@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2021 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -341,6 +341,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	updateAccessory();
     }
@@ -356,15 +357,17 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
     /*
      * The following implement the TableModel
      */
-
+    @Override
     public int getRowCount() {
 	return allnames.size();
     }
 
+    @Override
     public int getColumnCount() {
 	return 3;
     }
 
+    @Override
     public Object getValueAt(int row, int column) {
 	String oid = allnames.get(row);
 	if (column == 0) {
@@ -412,7 +415,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      * you - then all you need to do is have the following to capture the
      * output that it generates.
      */
-
+    @Override
     public void setValueAt(Object value, int row, int column) {
 	if (column == 2) {
 	    String oid = allnames.get(row);

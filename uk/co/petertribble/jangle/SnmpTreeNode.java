@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2021 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -44,6 +44,7 @@ public class SnmpTreeNode extends DefaultMutableTreeNode {
 	super(o);
     }
 
+    @Override
     public String toString() {
 	return (userObject == null) ? null :
 	    SnmpMibManager.getInstance().prettifyOID(userObject.toString());

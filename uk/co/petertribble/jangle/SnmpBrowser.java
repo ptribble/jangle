@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2021 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -205,6 +205,7 @@ public class SnmpBrowser extends JFrame implements ActionListener {
     }
 
     class winExit extends WindowAdapter {
+	@Override
 	public void windowClosing(WindowEvent we) {
 	    JingleMultiFrame.unregister(SnmpBrowser.this);
 	}
@@ -250,6 +251,7 @@ public class SnmpBrowser extends JFrame implements ActionListener {
 	}
     }
 
+    @Override
     public void actionPerformed(ActionEvent e) {
 	if (e.getSource() == cloneItem) {
 	    new SnmpBrowser();

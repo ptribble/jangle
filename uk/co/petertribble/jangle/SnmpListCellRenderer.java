@@ -38,6 +38,7 @@ import javax.swing.JList;
  */
 public class SnmpListCellRenderer extends DefaultListCellRenderer {
 
+    @Override
     public Component getListCellRendererComponent(JList list,
 							Object value,
 							int index,

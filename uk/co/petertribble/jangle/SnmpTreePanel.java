@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2021 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -588,6 +588,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     // handle ListSelectionListener events
+    @Override
     public void valueChanged(ListSelectionEvent e) {
         if (!e.getValueIsAdjusting() && slist.getSelectedIndex() != -1) {
 	    Object o = slist.getSelectedValue();
@@ -598,6 +599,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     // handle TreeSelectionListener events
+    @Override
     public void valueChanged(TreeSelectionEvent e) {
 	TreePath tpth = e.getNewLeadSelectionPath();
 	if (tpth != null) {
@@ -606,6 +608,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     // handle timer events
+    @Override
     public void actionPerformed(ActionEvent e) {
 	updateCurrent();
     }

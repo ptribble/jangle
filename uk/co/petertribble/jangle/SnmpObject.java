@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2021 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -89,6 +89,7 @@ public class SnmpObject {
      *
      * @return the string form of the oid represented by this SnmpObject
      */
+    @Override
     public String toString() {
 	return oid.toString();
     }
