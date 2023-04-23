@@ -8,7 +8,7 @@ Use the native swingworker
 
 Updated JFreeChart to 1.0.17.
 
-NOTE: As a result, jangle now reguires Java 1.6 or later
+NOTE: As a result, jangle now requires Java 1.6 or later
 
 Format other date values as dates, and tidy up the display format
 
