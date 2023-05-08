@@ -1,3 +1,17 @@
+0.15
+
+Our snmpwalk man page is in section 1
+
+Add basic to pmd rules, reorder for ease of use
+
+Add missing @Override annotations
+
+No more raw types in SnmpTreePanel
+
+Remove unnecessary parentheses.
+
+Fix packaging
+
 0.14
 
 Update jfreechart to 1.5.0
