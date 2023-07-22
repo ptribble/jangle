@@ -84,7 +84,7 @@ public class SnmpUtil {
      * @return true if the value represents a date
      */
     public static boolean isDate(SnmpObject sno) {
-	String sp = SnmpUtil.getParentOID(sno.toString());
+	String sp = getParentOID(sno.toString());
 	// hrSWInstalledDate
 	if (sp.equals("1.3.6.1.2.1.25.6.3.1.5")) {
 	    return true;
@@ -112,8 +112,8 @@ public class SnmpUtil {
      * @return the value as a nicely formatted String
      */
     public static String niceString(SnmpObject sno) {
-	if (SnmpUtil.isDate(sno)) {
-	    return SnmpUtil.getOctetDate
+	if (isDate(sno)) {
+	    return getOctetDate
 			(((SNMPOctetString)sno.getValue()).toHexString());
 	}
 	return sno.valueString();
