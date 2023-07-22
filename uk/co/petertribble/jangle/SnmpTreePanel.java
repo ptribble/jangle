@@ -184,7 +184,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	jp2.add(jpb, BorderLayout.SOUTH);
 	jp2.validate();
 	// load data in background
-	(new ExploreWorker()).execute();
+	new ExploreWorker().execute();
     }
 
     /*

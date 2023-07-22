@@ -75,7 +75,7 @@ public class SnmpBrowser extends JFrame implements ActionListener {
     public SnmpBrowser() {
 	super(SnmpResources.getString("BROWSERUI.NAME.TEXT"));
 
-	(new SmmWorker()).execute();
+	new SmmWorker().execute();
 
 	addWindowListener(new winExit());
 	JMenuBar jm = new JMenuBar();
