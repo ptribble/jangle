@@ -41,19 +41,19 @@ PMDCATRULES="security"
 PMDCACHE="${HOME}/.pmd/cache.jangle"
 
 case $1 in
--doc)
+doc|-doc)
 	rm -fr javadoc
 	mkdir javadoc
 	javadoc -classpath $BUILDJARS:. -d javadoc uk.co.petertribble.jangle
 	exit 0
 	;;
 clean)
-	rm -f `find uk/co -name '*.class'`
-	rm -f `find . -name '*~'`
+	rm -f `find uk/co -type f -name '*.class'`
+	rm -f `find . -type f -name '*~'`
 	rm -fr javadoc
 	exit 0
 	;;
-pmd)
+pmd|-pmd)
 	RULESETS=""
 	for RULE in $PMDRULES
 	do
