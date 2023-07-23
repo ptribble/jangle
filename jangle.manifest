@@ -1,2 +1,2 @@
 Main-Class: uk.co.petertribble.jangle.SnmpBrowser
-Class-Path: jingle.jar jumble.jar jfreechart-1.5.0.jar snmp.jar mibble-2.3.jar grammatica-1.4.jar
+Class-Path: jingle.jar jumble.jar jfreechart-1.5.4.jar snmp.jar mibble-2.3.jar grammatica-1.4.jar

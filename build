@@ -20,7 +20,7 @@ ARCHLIBDIR=${LIBDIR}/`/usr/bin/uname -p`
 JARLIBDIR=${LIBDIR}/java
 JAVA=java
 
-JFJAR=${JARLIBDIR}/jfreechart-1.5.0.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.5.4.jar
 JANGLEJAR=${JARLIBDIR}/jangle.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
