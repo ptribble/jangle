@@ -13,6 +13,8 @@ SYSOWNER="root sys"
 PKGTYPE="standalone"
 
 echo "i pkginfo=./pkginfo"
+echo "i postinstall=./postinstall"
+echo "i postremove=./postinstall"
 
 if [ "X$2" = "Xdeps" ]; then
   JFCVERS="1.5.4"
