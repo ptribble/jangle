@@ -59,7 +59,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
     private int maxage;
     private TimeSeriesCollection dataset;
     private boolean showdelta;
-    // times in milliseonds
+    // times in milliseconds
     private long lastsnap;
     private String charttitle;
 
