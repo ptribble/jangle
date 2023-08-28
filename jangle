@@ -3,7 +3,7 @@
 # run the jangle utilities
 #
 
-JKDIR=`dirname $0`
+JKDIR=${0%/*}
 LIBDIR=${JKDIR}/lib
 JARLIBDIR=${LIBDIR}/java
 JAVA=/usr/bin/java

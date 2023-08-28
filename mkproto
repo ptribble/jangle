@@ -36,12 +36,8 @@ echo "f none /usr/share/jangle/README.md=./README.md 0644 ${OWNER}"
 #
 # desktop files and their icons
 #
-for thisapp in jangle
-do
-  echo "f none /usr/share/applications/${thisapp}.desktop=./${thisapp}.desktop 0644 ${OWNER}"
-  echo "f none /usr/share/pixmaps/${thisapp}.png=./pixmaps/${thisapp}.png 0644 ${OWNER}"
-done
-
+echo "f none /usr/share/applications/jangle.desktop=./jangle.desktop 0644 ${OWNER}"
+echo "f none /usr/share/pixmaps/jangle.png=./pixmaps/jangle.png 0644 ${OWNER}"
 
 #
 # if depending on installed packages, then:
@@ -50,18 +46,18 @@ done
 if [ "X$PKGTYPE" = "Xstandalone" ]; then
   for path in lib/java/*
   do
-	pname=`basename $path`
+	pname=${path##*/}
 	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
   done
 else
   for path in lib/java/jfreechart*
   do
-	pname=`basename $path`
+	pname=${path##*/}
 	echo "s none /${JARDIR}/${pname}=../jfreechart-${JFCVERS}/${pname}"
   done
   for path in lib/java/s* lib/java/m* lib/java/g* lib/java/jingle.jar lib/java/jangle.jar lib/java/jumble.jar
   do
-	pname=`basename $path`
+	pname=${path##*/}
 	echo "f none /${JARDIR}/${pname}=${path} 0644 ${OWNER}"
   done
 fi
