@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -39,7 +39,7 @@ public class SnmpWalk {
 
     private static String community = "public";
     private static String host = "localhost";
-    private static boolean debug = false;
+    private static boolean debug;
 
     /**
      * Walk the snmp tree.

@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013-2021 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -392,8 +392,8 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	    } else {
 		StringBuilder sb = new StringBuilder();
 		for (SnmpObject so : ls) {
-		    sb.append(smm.prettifyOID(so)).append("=");
-		    sb.append(SnmpUtil.niceString(so)).append("\n");
+		    sb.append(smm.prettifyOID(so)).append('=')
+			.append(SnmpUtil.niceString(so)).append('\n');
 		}
 		tpsiblings.setText(sb.toString());
 		jp3t.add(new JScrollPane(tpsiblings));
@@ -413,8 +413,8 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	    // a list to hold those that can be charted
 	    List <SnmpObject> lc = new ArrayList <SnmpObject> ();
 	    for (SnmpObject so : alloids) {
-		sb.append(smm.prettifyOID(so)).append("=");
-		sb.append(SnmpUtil.niceString(so)).append("\n");
+		sb.append(smm.prettifyOID(so)).append('=')
+		    .append(SnmpUtil.niceString(so)).append('\n');
 		if (canChart(so)) {
 		    lc.add(so);
 		}
@@ -438,15 +438,15 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     private void setText(SnmpObject sno) {
-	StringBuilder sb = new StringBuilder();
-	sb.append("OID: ").append(smm.prettifyOID(sno)).append("\n");
+	StringBuilder sb = new StringBuilder(32);
+	sb.append("OID: ").append(smm.prettifyOID(sno));
 	String typeString = sno.getTypeString();
-	sb.append("Type: ").append(typeString).append("\n");
-	sb.append("Value: ").append(SnmpUtil.niceString(sno));
+	sb.append("\nType: ").append(typeString)
+	    .append("\nValue: ").append(SnmpUtil.niceString(sno));
 	if ("ObjectIdentifier".equals(typeString)) {
 	    sb.append(" = ").append(smm.prettifyOID(sno.getValue().toString()));
 	}
-	sb.append("\n");
+	sb.append('\n');
 	tp.setText(sb.toString());
     }
 
