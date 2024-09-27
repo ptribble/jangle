@@ -52,7 +52,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     private JingleTextPane tp;
     private JingleTextPane tpdesc;
     private JPanel jp1;
-    private JPanel jp2;
+    JPanel jp2;
     private SnmpChart chart;
 
     // for siblings
@@ -67,10 +67,10 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     private JingleTextPane tpcousins;
     private SnmpChart cchart;
 
-    private Exception savederror;
+    Exception savederror;
 
     private JList <SnmpObject> slist;
-    private JProgressBar jpb;
+    JProgressBar jpb;
     private DefaultListModel <SnmpObject> model;
     private JTabbedPane jtpl;
     private JTabbedPane jtpr;
@@ -123,7 +123,6 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
 	// details tab
 	jp1 = new JPanel(new BorderLayout());
-	jp2 = new JPanel(new BorderLayout());
 	tp = new JingleTextPane("text/plain");
 	jp1.add(new JScrollPane(tp));
 	// jp2 holds the chart
@@ -502,7 +501,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     }
 
     // retrieve the data via an snmp walk of the tree
-    private void buildData() {
+    void buildData() {
 	try {
 	    oidList = snl.getList(startOID);
 	} catch (SnmpException sne) {
@@ -510,7 +509,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	}
     }
 
-    private void showError() {
+    void showError() {
 	if (savederror != null) {
 	    System.out.println(savederror.getMessage());
 	    JOptionPane.showMessageDialog(this,
@@ -524,7 +523,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     /*
      * This methods builds both the list and the tree.
      */
-    private void buildUI() {
+    void buildUI() {
 	for (SnmpObject sno : oidList) {
 	    model.addElement(sno);
 	}
