@@ -50,14 +50,14 @@ public class SnmpWalk {
 	boolean gothosts = false;
 	int i = 0;
 	while (i < args.length) {
-	    if (args[i].equals("-c")) {
+	    if ("-c".equals(args[i])) {
 		if (i+1 < args.length) {
 		    i++;
 		    community = args[i];
 		} else {
 		    usage("missing argument to -c flag");
 		}
-	    } else if (args[i].equals("-d")) {
+	    } else if ("-d".equals(args[i])) {
 		debug = true;
 	    } else {
 		if (gothosts) {

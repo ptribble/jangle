@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -45,14 +45,14 @@ public class SnmpPing {
 	boolean gothosts = false;
 	int i = 0;
 	while (i < args.length) {
-	    if (args[i].equals("-c")) {
+	    if ("-c".equals(args[i])) {
 		if (i+1 < args.length) {
 		    i++;
 		    community = args[i];
 		} else {
 		    usage("missing argument to -c flag");
 		}
-	    } else if (args[i].equals("-o")) {
+	    } else if ("-o".equals(args[i])) {
 		if (i+1 < args.length) {
 		    i++;
 		    pingoid = args[i];

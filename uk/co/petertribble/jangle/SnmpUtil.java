@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -86,19 +86,19 @@ public class SnmpUtil {
     public static boolean isDate(SnmpObject sno) {
 	String sp = getParentOID(sno.toString());
 	// hrSWInstalledDate
-	if (sp.equals("1.3.6.1.2.1.25.6.3.1.5")) {
+	if ("1.3.6.1.2.1.25.6.3.1.5".equals(sp)) {
 	    return true;
 	}
 	// hrSystemDate
-	if (sp.equals("1.3.6.1.2.1.25.1.2")) {
+	if ("1.3.6.1.2.1.25.1.2".equals(sp)) {
 	    return true;
 	}
 	// hrFSLastFullBackupDate
-	if (sp.equals("1.3.6.1.2.1.25.3.8.1.8")) {
+	if ("1.3.6.1.2.1.25.3.8.1.8".equals(sp)) {
 	    return true;
 	}
 	// hrFSLastPartialBackupDate
-	if (sp.equals("1.3.6.1.2.1.25.3.8.1.9")) {
+	if ("1.3.6.1.2.1.25.3.8.1.9".equals(sp)) {
 	    return true;
 	}
 	return false;

@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013-2021 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -119,7 +119,7 @@ public class SnmpObject {
      * @return the string form of the value of this SnmpObject
      */
     public String valueString() {
-	if (getType().equals("snmp.SNMPOctetString")) {
+	if ("snmp.SNMPOctetString".equals(getType())) {
 	    String snmpString = value.toString();
 	    // truncate at first null character
 	    int nullLocation = snmpString.indexOf('\0');
