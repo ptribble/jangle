@@ -1,5 +1,7 @@
 #!/bin/sh
 #
+# SPDX-License-Identifier: CDDL-1.0
+#
 # run the jangle utilities
 #
 
@@ -46,17 +48,17 @@ ALLJARS=${JFJAR}:${JINGLEJAR}:${JUMBLEJAR}:${JANGLEJAR}:${SNMPJAR}:${MIBBLEJARS}
 case $SUBCOMMAND in
 
 'browser')
-    $JAVA -Dswing.aatext=true -jar ${JANGLEJAR}
+    $JAVA -Dswing.aatext=true -jar "${JANGLEJAR}"
     exit 0
     ;;
 
 'snmpwalk')
-    $JAVA -cp ${ALLJARS} uk.co.petertribble.jangle.SnmpWalk $*
+    $JAVA -cp "${ALLJARS}" uk.co.petertribble.jangle.SnmpWalk "$@"
     exit 0
     ;;
 
 'snmpping')
-    $JAVA -cp ${ALLJARS} uk.co.petertribble.jangle.SnmpPing $*
+    $JAVA -cp "${ALLJARS}" uk.co.petertribble.jangle.SnmpPing "$@"
     exit 0
     ;;
 

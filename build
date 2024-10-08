@@ -42,7 +42,7 @@ case $1 in
 doc|-doc)
 	rm -fr javadoc
 	mkdir javadoc
-	javadoc -classpath $BUILDJARS:. -d javadoc uk.co.petertribble.jangle
+	javadoc -classpath "$BUILDJARS:." -d javadoc uk.co.petertribble.jangle
 	exit 0
 	;;
 clean)
@@ -62,7 +62,7 @@ pmd|-pmd)
 	if [ ! -d "${HOME}/.pmd" ]; then
 	    mkdir -p "${HOME}/.pmd"
 	fi
-	pmd check --cache "${PMDCACHE}" -d uk -R "$RULESETS" --use-version java-1.8 --aux-classpath `echo lib/java/* | sed 's= =:=g'` 2>/dev/null
+	pmd check --cache "${PMDCACHE}" -d uk -R "$RULESETS" --use-version java-1.8 --aux-classpath $(echo lib/java/* | sed 's= =:=g') 2>/dev/null
 	pmd check --cache "${PMDCACHE}.html" -d help/*.html  -R category/html/bestpractices.xml 2>/dev/null
 	exit 0
 	;;
@@ -75,8 +75,8 @@ packages)
 	rm prototype
 	rm jangle.installed
 	rm -f depend
-	if [ -x ${THOME}/build/create_zap_from_pkg ]; then
-	    ${THOME}/build/create_zap_from_pkg TRIBjangle /tmp/TRIBjangle.pkg
+	if [ -x "${THOME}/build/create_zap_from_pkg" ]; then
+	    "${THOME}/build/create_zap_from_pkg" TRIBjangle /tmp/TRIBjangle.pkg
 	else
 	    zip -q -r TRIBjangle TRIBjangle
 	    mv TRIBjangle.zip TRIBjangle.zap
@@ -93,6 +93,6 @@ if [ -x /opt/onbld/bin/jstyle ]; then
 	/opt/onbld/bin/jstyle $(find uk/co/petertribble -name '*.java')
 fi
 
-javac ${XFLAGS} -classpath .:${BUILDJARS} uk/co/petertribble/jangle/*.java
+javac ${XFLAGS} -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 
 jar -cmf jangle.manifest ${JANGLEJAR} pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
