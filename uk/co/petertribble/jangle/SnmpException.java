@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -32,6 +32,8 @@ package uk.co.petertribble.jangle;
  * @author Peter Tribble
  */
 public class SnmpException extends Exception {
+
+    private static final long serialVersionUID = 1L;
 
     /**
      * Create a new SnmpException, with no message text.

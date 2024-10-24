@@ -35,7 +35,7 @@ import java.util.ResourceBundle;
  */
 public class SnmpResources {
 
-    private static final ResourceBundle snmpres =
+    private static final ResourceBundle SNMPRES =
 				ResourceBundle.getBundle("properties/jangle");
 
     private SnmpResources() {
@@ -50,6 +50,6 @@ public class SnmpResources {
      * @return The matching String from the resource bundle.
      */
     public static String getString(String key) {
-	return snmpres.getString(key);
+	return SNMPRES.getString(key);
     }
 }

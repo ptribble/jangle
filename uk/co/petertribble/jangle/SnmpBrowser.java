@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013-2021 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -41,6 +41,8 @@ import uk.co.petertribble.jingle.JingleIntTextField;
  * @author Peter Tribble
  */
 public class SnmpBrowser extends JFrame implements ActionListener {
+
+    private static final long serialVersionUID = 1L;
 
     private static final String DEFAULT_HOST = "localhost";
     private static final String DEFAULT_COMMUNITY = "public";
@@ -72,12 +74,15 @@ public class SnmpBrowser extends JFrame implements ActionListener {
     private JTextField jtcomm;
     private JButton jbload;
 
+    /**
+     * Create an SNMP browser application.
+     */
     public SnmpBrowser() {
 	super(SnmpResources.getString("BROWSERUI.NAME.TEXT"));
 
 	new SmmWorker().execute();
 
-	addWindowListener(new winExit());
+	addWindowListener(new WindowExit());
 	JMenuBar jm = new JMenuBar();
 
 	JMenu jme = new JMenu(SnmpResources.getString("FILE.TEXT"));
@@ -204,7 +209,7 @@ public class SnmpBrowser extends JFrame implements ActionListener {
 	setVisible(true);
     }
 
-    class winExit extends WindowAdapter {
+    class WindowExit extends WindowAdapter {
 	@Override
 	public void windowClosing(WindowEvent we) {
 	    JingleMultiFrame.unregister(SnmpBrowser.this);

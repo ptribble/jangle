@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -37,6 +37,8 @@ import javax.swing.JList;
  * @author Peter Tribble
  */
 public class SnmpListCellRenderer extends DefaultListCellRenderer {
+
+    private static final long serialVersionUID = 1L;
 
     @Override
     public Component getListCellRendererComponent(JList list,

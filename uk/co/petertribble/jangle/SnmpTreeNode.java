@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013-2021 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -35,6 +35,8 @@ import javax.swing.tree.DefaultMutableTreeNode;
  */
 public class SnmpTreeNode extends DefaultMutableTreeNode {
 
+    private static final long serialVersionUID = 1L;
+
     /**
      * Construct a new SnmpTreeNode.
      *
@@ -46,7 +48,7 @@ public class SnmpTreeNode extends DefaultMutableTreeNode {
 
     @Override
     public String toString() {
-	return (userObject == null) ? null :
-	    SnmpMibManager.getInstance().prettifyOID(userObject.toString());
+	return (userObject == null) ? null
+	    : SnmpMibManager.getInstance().prettifyOID(userObject.toString());
     }
 }

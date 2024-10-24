@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013-2021 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -50,7 +50,9 @@ import org.jfree.chart.plot.XYPlot;
  */
 public class SnmpChart extends AbstractTableModel implements ActionListener {
 
-    static private final SnmpMibManager smm = SnmpMibManager.getInstance();
+    private static final long serialVersionUID = 1L;
+
+    private static final SnmpMibManager SMM = SnmpMibManager.getInstance();
 
     private SnmpController sc;
     private JFreeChart chart;
@@ -177,10 +179,10 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	Map <String, String> oids = new TreeMap <String, String> ();
 	Map <String, String> alloids = new TreeMap <String, String> ();
 	for (SnmpObject sno : snos) {
-	    oids.put(smm.prettifyOID(sno.toString()), sno.toString());
+	    oids.put(SMM.prettifyOID(sno.toString()), sno.toString());
 	}
 	for (SnmpObject sno : tsnos) {
-	    alloids.put(smm.prettifyOID(sno.toString()), sno.toString());
+	    alloids.put(SMM.prettifyOID(sno.toString()), sno.toString());
 	}
 	initialize(new ArrayList <String> (oids.values()),
 		new ArrayList <String> (alloids.values()));
@@ -194,7 +196,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	lastsnap = 0;
 
 	for (String oid : oids) {
-	    TimeSeries ts = new TimeSeries(smm.prettifyOID(oid));
+	    TimeSeries ts = new TimeSeries(SMM.prettifyOID(oid));
 	    ts.setMaximumItemAge(maxage);
 	    dataset.addSeries(ts);
 	    tsmap.put(oid, ts);
@@ -371,13 +373,13 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
     public Object getValueAt(int row, int column) {
 	String oid = allnames.get(row);
 	if (column == 0) {
-	    return smm.prettifyOID(oid);
+	    return SMM.prettifyOID(oid);
 	} else if (column == 1) {
 	    return valueMap.get(oid) == null ? getStringValue(oid)
 		: valueMap.get(oid);
 	} else {
-	    return valueMap.get(oid) == null ? Boolean.FALSE :
-		Boolean.valueOf(dataset.indexOf(tsmap.get(oid)) > -1);
+	    return valueMap.get(oid) == null ? Boolean.FALSE
+		: Boolean.valueOf(dataset.indexOf(tsmap.get(oid)) > -1);
 	}
     }
 

@@ -46,7 +46,7 @@ public class SnmpWalk {
      *
      * @param args command line arguments
      */
-    public static void main(String args[]) {
+    public static void main(String[] args) {
 	boolean gothosts = false;
 	int i = 0;
 	while (i < args.length) {
@@ -72,7 +72,7 @@ public class SnmpWalk {
 	doWalk();
     }
 
-    static private void doWalk() {
+    private static void doWalk() {
 	try {
 	    SnmpParams snp = new SnmpParams(host, community);
 	    SnmpController sc = new SnmpController(snp);
@@ -86,7 +86,7 @@ public class SnmpWalk {
 	}
     }
 
-    static private void printout(SnmpObject sno) {
+    private static void printout(SnmpObject sno) {
 	String type = sno.getTypeString();
 	String oid = smm.prettifyOID(sno.toString());
 	System.out.print(oid + " = " + type + ":");
@@ -101,7 +101,7 @@ public class SnmpWalk {
 	}
     }
 
-    static private void usage(String s) {
+    private static void usage(String s) {
 	System.err.println("Error: " + s);
 	System.err.println
 	    ("Usage: snmpwalk [-c community] host");
