@@ -10,8 +10,6 @@
 # ./build
 #    Builds all the java classes
 #
-# If you have the ON build tools installed, then jstyle gets run.
-#
 
 PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
 export PATH
@@ -88,10 +86,6 @@ packages)
 esac
 
 XFLAGS="-Xlint -Xlint:-rawtypes"
-
-if [ -x /opt/onbld/bin/jstyle ]; then
-	/opt/onbld/bin/jstyle $(find uk/co/petertribble -name '*.java')
-fi
 
 javac ${XFLAGS} -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 
