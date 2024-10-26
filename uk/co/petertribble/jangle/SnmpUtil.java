@@ -33,7 +33,10 @@ import snmp.*;
  *
  * @author Peter Tribble
  */
-public class SnmpUtil {
+public final class SnmpUtil {
+
+    private SnmpUtil() {
+    }
 
     /**
      * Return the parent of the given OID.

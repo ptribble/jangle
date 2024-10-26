@@ -36,7 +36,7 @@ import net.percederberg.mibble.value.*;
  *
  * @author Peter Tribble
  */
-public class SnmpMibManager {
+public final class SnmpMibManager {
 
     private static SnmpMibManager smminstance;
 

@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -33,7 +33,7 @@ import java.util.ResourceBundle;
  *
  * @author Peter Tribble
  */
-public class SnmpResources {
+public final class SnmpResources {
 
     private static final ResourceBundle SNMPRES =
 				ResourceBundle.getBundle("properties/jangle");

@@ -31,10 +31,13 @@ package uk.co.petertribble.jangle;
  *
  * @author Peter Tribble
  */
-public class SnmpPing {
+public final class SnmpPing {
 
     private static String community = "public";
     private static String pingoid = "1.3.6.1.2.1.1.1.0";
+
+    private SnmpPing() {
+    }
 
     /**
      * Grab an SNMP value.

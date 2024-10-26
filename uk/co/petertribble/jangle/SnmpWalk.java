@@ -33,13 +33,17 @@ import snmp.SNMPOctetString;
  *
  * @author Peter Tribble
  */
-public class SnmpWalk {
+public final class SnmpWalk {
 
     private static SnmpMibManager smm;
 
     private static String community = "public";
     private static String host = "localhost";
     private static boolean debug;
+
+
+    private SnmpWalk() {
+    }
 
     /**
      * Walk the snmp tree.
