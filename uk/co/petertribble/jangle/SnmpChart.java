@@ -102,7 +102,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	this.charttitle = charttitle;
 	this.interval = interval;
 	this.maxage = 1000*age;
-	List <String> oids = new ArrayList <String> ();
+	List <String> oids = new ArrayList<>();
 	oids.add(oid);
 	initialize(oids, oids);
     }
@@ -176,22 +176,22 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	 * into a TreeMap with the pretty version as the key, so that they are
 	 * sorted by name rather than by oid.
 	 */
-	Map <String, String> oids = new TreeMap <String, String> ();
-	Map <String, String> alloids = new TreeMap <String, String> ();
+	Map <String, String> oids = new TreeMap<>();
+	Map <String, String> alloids = new TreeMap<>();
 	for (SnmpObject sno : snos) {
 	    oids.put(SMM.prettifyOID(sno.toString()), sno.toString());
 	}
 	for (SnmpObject sno : tsnos) {
 	    alloids.put(SMM.prettifyOID(sno.toString()), sno.toString());
 	}
-	initialize(new ArrayList <String> (oids.values()),
-		new ArrayList <String> (alloids.values()));
+	initialize(new ArrayList<>(oids.values()),
+		   new ArrayList<>(alloids.values()));
     }
 
     private void initialize(List <String> oids, List <String> alloids) {
 	allnames = alloids;
-	tsmap = new HashMap <String, TimeSeries> ();
-	valueMap = new HashMap <String, BigInteger> ();
+	tsmap = new HashMap<>();
+	valueMap = new HashMap<>();
 	dataset = new TimeSeriesCollection();
 	lastsnap = 0;
 

@@ -59,7 +59,7 @@ public class SnmpList {
      * @throws SnmpException if an error occurs
      */
     public List <SnmpObject> getList(String startOID) throws SnmpException {
-	oidList = new ArrayList <SnmpObject> ();
+	oidList = new ArrayList<>();
 	SnmpObject sno = sc.getNext(startOID);
 	while (sno != null) {
 	    oidList.add(sno);
@@ -77,7 +77,7 @@ public class SnmpList {
      * @return the List of siblings of the given oid
      */
     public List <SnmpObject> getSiblings(String oid) {
-	List <SnmpObject> lso = new ArrayList <SnmpObject> ();
+	List <SnmpObject> lso = new ArrayList<>();
 	String sparent = SnmpUtil.getParentOID(oid);
 	if (sparent != null) {
 	    for (SnmpObject sno : oidList) {
@@ -98,7 +98,7 @@ public class SnmpList {
      * @return the List of cousins of the given oid
      */
     public List <SnmpObject> getCousins(String oid) {
-	List <SnmpObject> lso = new ArrayList <SnmpObject> ();
+	List <SnmpObject> lso = new ArrayList<>();
 	String sinst = getOIDinstance(oid);
 	String sgparent = SnmpUtil.getParentOID(SnmpUtil.getParentOID(oid));
 	if (sgparent != null) {

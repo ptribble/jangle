@@ -103,8 +103,8 @@ public class SnmpWalk {
 
     private static void usage(String s) {
 	System.err.println("Error: " + s);
-	System.err.println
-	    ("Usage: snmpwalk [-c community] host");
+	System.err.println(
+	    "Usage: snmpwalk [-c community] host");
 	System.exit(1);
     }
 }

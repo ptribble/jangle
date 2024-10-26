@@ -111,9 +111,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	setLayout(new BorderLayout());
 
 	jtpl = new JTabbedPane();
-	model = new DefaultListModel <SnmpObject> ();
-	oidList = new ArrayList <SnmpObject> ();
-	slist = new JList <SnmpObject> (model);
+	model = new DefaultListModel<>();
+	oidList = new ArrayList<>();
+	slist = new JList<>(model);
 	slist.addListSelectionListener(this);
 	slist.setCellRenderer(new SnmpListCellRenderer());
 	jtpl.add(SnmpResources.getString("SNMP.LIST.TEXT"),
@@ -411,7 +411,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	if (alloids.size() > 1) {
 	    StringBuilder sb = new StringBuilder();
 	    // a list to hold those that can be charted
-	    List <SnmpObject> lc = new ArrayList <SnmpObject> ();
+	    List <SnmpObject> lc = new ArrayList<>();
 	    for (SnmpObject so : alloids) {
 		sb.append(smm.prettifyOID(so)).append('=')
 		    .append(SnmpUtil.niceString(so)).append('\n');
@@ -537,11 +537,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	// root node
 	SnmpTreeNode rootNode = new SnmpTreeNode("SNMP");
 	// real nodes
-	Map <String, SnmpTreeNode> m =
-			new HashMap <String, SnmpTreeNode> ();
+	Map <String, SnmpTreeNode> m = new HashMap<>();
 	// intermediate nodes
-	Map <String, SnmpTreeNode> m2 =
-			new HashMap <String, SnmpTreeNode> ();
+	Map <String, SnmpTreeNode> m2 =	new HashMap<>();
 	for (SnmpObject sno : oidList) {
 	    m.put(sno.toString(), new SnmpTreeNode(sno));
 	}

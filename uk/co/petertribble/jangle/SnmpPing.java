@@ -94,8 +94,8 @@ public class SnmpPing {
 
     private static void usage(String s) {
 	System.err.println("Error: " + s);
-	System.err.println
-	    ("Usage: snmpping [-c community] [-o oid] host [ host ...]");
+	System.err.println(
+	    "Usage: snmpping [-c community] [-o oid] host [ host ...]");
 	System.exit(1);
     }
 }

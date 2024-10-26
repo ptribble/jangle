@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2013 Peter C. Tribble
+ * Copyright 2013-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -58,9 +58,9 @@ public class SnmpMibManager {
     }
 
     private SnmpMibManager() {
-	oidMap = new HashMap <String, String> ();
-	oid2nameMap = new HashMap <String, String> ();
-	name2oidMap = new HashMap <String, String> ();
+	oidMap = new HashMap<>();
+	oid2nameMap = new HashMap<>();
+	name2oidMap = new HashMap<>();
 	mibloader = new MibLoader();
 	// solaris/opensolaris
 	readMIBs("/etc/sma/snmp/mibs");
