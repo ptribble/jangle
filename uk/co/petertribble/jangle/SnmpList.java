@@ -21,7 +21,7 @@
  */
 
 /*
- * Copyright 2019 Peter C. Tribble
+ * Copyright 2019-2024 Peter C. Tribble
  */
 
 package uk.co.petertribble.jangle;
@@ -38,7 +38,7 @@ import java.util.ArrayList;
 public class SnmpList {
 
     private SnmpController sc;
-    private List <SnmpObject> oidList;
+    private List<SnmpObject> oidList;
 
     /**
      * Create a new SnmpList using the specified SnmpController.
@@ -58,7 +58,7 @@ public class SnmpList {
      *
      * @throws SnmpException if an error occurs
      */
-    public List <SnmpObject> getList(String startOID) throws SnmpException {
+    public List<SnmpObject> getList(String startOID) throws SnmpException {
 	oidList = new ArrayList<>();
 	SnmpObject sno = sc.getNext(startOID);
 	while (sno != null) {
@@ -76,8 +76,8 @@ public class SnmpList {
      *
      * @return the List of siblings of the given oid
      */
-    public List <SnmpObject> getSiblings(String oid) {
-	List <SnmpObject> lso = new ArrayList<>();
+    public List<SnmpObject> getSiblings(String oid) {
+	List<SnmpObject> lso = new ArrayList<>();
 	String sparent = SnmpUtil.getParentOID(oid);
 	if (sparent != null) {
 	    for (SnmpObject sno : oidList) {
@@ -97,8 +97,8 @@ public class SnmpList {
      *
      * @return the List of cousins of the given oid
      */
-    public List <SnmpObject> getCousins(String oid) {
-	List <SnmpObject> lso = new ArrayList<>();
+    public List<SnmpObject> getCousins(String oid) {
+	List<SnmpObject> lso = new ArrayList<>();
 	String sinst = getOIDinstance(oid);
 	String sgparent = SnmpUtil.getParentOID(SnmpUtil.getParentOID(oid));
 	if (sgparent != null) {

@@ -65,11 +65,11 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
     private long lastsnap;
     private String charttitle;
 
-    private Map <String, TimeSeries> tsmap;
+    private Map<String, TimeSeries> tsmap;
     // save previous values for rates, and used as the backing store for
     // the TableModel
-    private Map <String, BigInteger> valueMap;
-    private List <String> allnames;
+    private Map<String, BigInteger> valueMap;
+    private List<String> allnames;
 
     /**
      * Create a new SnmpChart, showing the rate of change of the given oid.
@@ -102,7 +102,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	this.charttitle = charttitle;
 	this.interval = interval;
 	this.maxage = 1000*age;
-	List <String> oids = new ArrayList<>();
+	List<String> oids = new ArrayList<>();
 	oids.add(oid);
 	initialize(oids, oids);
     }
@@ -116,7 +116,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List <SnmpObject> oids,
+    public SnmpChart(SnmpController sc, List<SnmpObject> oids,
 		String charttitle, int interval, int age) {
 	this(sc, oids, charttitle, true, interval, age);
     }
@@ -131,8 +131,8 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List <SnmpObject> oids,
-		List <SnmpObject> alloids,
+    public SnmpChart(SnmpController sc, List<SnmpObject> oids,
+		List<SnmpObject> alloids,
 		String charttitle, int interval, int age) {
 	this(sc, oids, alloids, charttitle, true, interval, age);
     }
@@ -147,7 +147,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List <SnmpObject> snos,
+    public SnmpChart(SnmpController sc, List<SnmpObject> snos,
 		String charttitle, boolean showdelta, int interval, int age) {
 	this(sc, snos, snos, charttitle, showdelta, interval, age);
     }
@@ -163,8 +163,8 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List <SnmpObject> snos,
-		List <SnmpObject> tsnos,
+    public SnmpChart(SnmpController sc, List<SnmpObject> snos,
+		List<SnmpObject> tsnos,
 		String charttitle, boolean showdelta, int interval, int age) {
 	this.sc = sc;
 	this.showdelta = showdelta;
@@ -176,8 +176,8 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 	 * into a TreeMap with the pretty version as the key, so that they are
 	 * sorted by name rather than by oid.
 	 */
-	Map <String, String> oids = new TreeMap<>();
-	Map <String, String> alloids = new TreeMap<>();
+	Map<String, String> oids = new TreeMap<>();
+	Map<String, String> alloids = new TreeMap<>();
 	for (SnmpObject sno : snos) {
 	    oids.put(SMM.prettifyOID(sno.toString()), sno.toString());
 	}
@@ -188,7 +188,7 @@ public class SnmpChart extends AbstractTableModel implements ActionListener {
 		   new ArrayList<>(alloids.values()));
     }
 
-    private void initialize(List <String> oids, List <String> alloids) {
+    private void initialize(List<String> oids, List<String> alloids) {
 	allnames = alloids;
 	tsmap = new HashMap<>();
 	valueMap = new HashMap<>();

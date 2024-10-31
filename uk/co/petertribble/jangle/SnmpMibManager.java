@@ -40,9 +40,9 @@ public final class SnmpMibManager {
 
     private static SnmpMibManager smminstance;
 
-    private Map <String, String> oidMap;
-    private Map <String, String> oid2nameMap;
-    private Map <String, String> name2oidMap;
+    private Map<String, String> oidMap;
+    private Map<String, String> oid2nameMap;
+    private Map<String, String> name2oidMap;
     private MibLoader mibloader;
 
     /**

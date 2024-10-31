@@ -234,7 +234,7 @@ public class SnmpBrowser extends JFrame implements ActionListener {
 	stp.setMaxAge(i);
     }
 
-    class SmmWorker extends SwingWorker <String, Object> {
+    class SmmWorker extends SwingWorker<String, Object> {
 	@Override
 	public String doInBackground() {
 	    SnmpMibManager.getInstance();

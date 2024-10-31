@@ -70,9 +70,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
     Exception savederror;
 
-    private JList <SnmpObject> slist;
+    private JList<SnmpObject> slist;
     JProgressBar jpb;
-    private DefaultListModel <SnmpObject> model;
+    private DefaultListModel<SnmpObject> model;
     private JTabbedPane jtpl;
     private JTabbedPane jtpr;
     private JTree stree;
@@ -87,7 +87,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
     private SnmpController sc;
     private SnmpList snl;
     private SnmpMibManager smm;
-    private List <SnmpObject> oidList;
+    private List<SnmpObject> oidList;
 
     private Timer timer;
     private int interval = 30;
@@ -197,7 +197,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
      * the data structures as class variables so that they can be accessed
      * from multiple contexts.
      */
-    class ExploreWorker extends SwingWorker <String, Object> {
+    class ExploreWorker extends SwingWorker<String, Object> {
 	@Override
 	public String doInBackground() {
 	    buildData();
@@ -381,7 +381,7 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
     private void showSiblings(SnmpObject sno) {
 	String oid = sno.toString();
-	List <SnmpObject> ls = snl.getSiblings(oid);
+	List<SnmpObject> ls = snl.getSiblings(oid);
 	if (ls.size() > 1) {
 	    if (canChart(sno)) {
 		schart = new SnmpChart(sc, ls,
@@ -407,11 +407,11 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 
     private void showCousins(SnmpObject sno) {
 	String oid = sno.toString();
-	List <SnmpObject> alloids = snl.getCousins(oid);
+	List<SnmpObject> alloids = snl.getCousins(oid);
 	if (alloids.size() > 1) {
 	    StringBuilder sb = new StringBuilder();
 	    // a list to hold those that can be charted
-	    List <SnmpObject> lc = new ArrayList<>();
+	    List<SnmpObject> lc = new ArrayList<>();
 	    for (SnmpObject so : alloids) {
 		sb.append(smm.prettifyOID(so)).append('=')
 		    .append(SnmpUtil.niceString(so)).append('\n');
@@ -537,9 +537,9 @@ public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
 	// root node
 	SnmpTreeNode rootNode = new SnmpTreeNode("SNMP");
 	// real nodes
-	Map <String, SnmpTreeNode> m = new HashMap<>();
+	Map<String, SnmpTreeNode> m = new HashMap<>();
 	// intermediate nodes
-	Map <String, SnmpTreeNode> m2 =	new HashMap<>();
+	Map<String, SnmpTreeNode> m2 = new HashMap<>();
 	for (SnmpObject sno : oidList) {
 	    m.put(sno.toString(), new SnmpTreeNode(sno));
 	}
