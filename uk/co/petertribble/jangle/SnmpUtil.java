@@ -117,7 +117,7 @@ public final class SnmpUtil {
     public static String niceString(SnmpObject sno) {
 	if (isDate(sno)) {
 	    return getOctetDate(
-			((SNMPOctetString)sno.getValue()).toHexString());
+			((SNMPOctetString) sno.getValue()).toHexString());
 	}
 	return sno.valueString();
     }

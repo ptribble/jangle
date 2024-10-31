@@ -98,7 +98,7 @@ public final class SnmpWalk {
 	    System.out.println(SnmpUtil.niceString(sno));
 	    if (debug) {
 		System.out.println("  (hex: "
-		    + ((SNMPOctetString)sno.getValue()).toHexString() + ")");
+		    + ((SNMPOctetString) sno.getValue()).toHexString() + ")");
 	    }
 	} else {
 	    System.out.println(sno.getValue());
