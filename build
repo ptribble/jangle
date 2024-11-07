@@ -89,4 +89,4 @@ XFLAGS="-Xlint -Xlint:-rawtypes"
 
 javac ${XFLAGS} -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 
-jar -cmf jangle.manifest ${JANGLEJAR} pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
+jar -cmf jangle.manifest "${JANGLEJAR}" pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
