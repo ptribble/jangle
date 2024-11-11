@@ -1,7 +1,7 @@
 PKG="TRIBjangle"
 NAME="Java SNMP browser and utilities"
 ARCH="i386,sparc"
-VERSION="0.16"
+VERSION="0.17"
 CATEGORY="application"
 VENDOR="Peter Tribble"
 EMAIL="peter.tribble@gmail.com"
