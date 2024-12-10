@@ -45,8 +45,8 @@ import org.jfree.chart.ChartPanel;
  *
  * @author Peter Tribble
  */
-public class SnmpTreePanel extends JPanel implements TreeSelectionListener,
-        ListSelectionListener, ActionListener {
+public final class SnmpTreePanel extends JPanel implements
+        TreeSelectionListener, ListSelectionListener, ActionListener {
 
     private static final long serialVersionUID = 1L;
 

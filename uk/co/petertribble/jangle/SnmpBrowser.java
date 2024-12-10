@@ -40,7 +40,7 @@ import uk.co.petertribble.jingle.JingleIntTextField;
  *
  * @author Peter Tribble
  */
-public class SnmpBrowser extends JFrame implements ActionListener {
+public final class SnmpBrowser extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

@@ -36,7 +36,7 @@ import javax.swing.JList;
  *
  * @author Peter Tribble
  */
-public class SnmpListCellRenderer extends DefaultListCellRenderer {
+public final class SnmpListCellRenderer extends DefaultListCellRenderer {
 
     private static final long serialVersionUID = 1L;
 

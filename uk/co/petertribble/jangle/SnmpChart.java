@@ -48,7 +48,8 @@ import org.jfree.chart.plot.XYPlot;
  *
  * @author Peter Tribble
  */
-public class SnmpChart extends AbstractTableModel implements ActionListener {
+public final class SnmpChart extends AbstractTableModel
+        implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 

@@ -33,7 +33,7 @@ import javax.swing.tree.DefaultMutableTreeNode;
  *
  * @author Peter Tribble
  */
-public class SnmpTreeNode extends DefaultMutableTreeNode {
+public final class SnmpTreeNode extends DefaultMutableTreeNode {
 
     private static final long serialVersionUID = 1L;
 
