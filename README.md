@@ -3,10 +3,9 @@ jangle contains code under the following licenses:
 The main application itself is licensed under the CDDL. See the file
 help/CDDL.txt for details
 
-jangle incorporates JFreeChart, (C)opyright 2000-2011 by Object
-Refinery Limited and Contributors. JFreeChart is covered by the LGPL -
-see the file LGPL.txt, and can be obtained from
-http://www.jfree.org/jfreechart/.
+jangle incorporates JFreeChart, Copyright 2000-present by David Gilbert and
+Contributors. JFreeChart is covered by the LGPL - see the file LGPL.txt,
+and can be obtained from https://www.jfree.org/jfreechart/.
 
 jangle incorporates a couple of sets of utility classes. See
 http://www.petertribble.co.uk/Solaris/jingle.html
