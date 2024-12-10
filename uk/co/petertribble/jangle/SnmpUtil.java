@@ -72,7 +72,7 @@ public final class SnmpUtil {
 	    int hh = Integer.parseInt(sp[4], 16);
 	    int mm = Integer.parseInt(sp[5], 16);
 	    int ss = Integer.parseInt(sp[6], 16);
-	    return String.format("%04d-%02d-%02d %02d:%02d:%02d", 256*y1 + y2,
+	    return String.format("%04d-%02d-%02d %02d:%02d:%02d", 256 * y1 + y2,
 			mon, dd, hh, mm, ss);
 	}
 	return "";

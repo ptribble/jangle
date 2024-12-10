@@ -218,7 +218,7 @@ public final class SnmpTreePanel extends JPanel implements
 		jp2.removeAll();
 		jp2.validate();
 		jp2.repaint();
-	    } catch (Exception e) {}
+	    } catch (Exception e) { }
 	}
     }
 
@@ -227,7 +227,7 @@ public final class SnmpTreePanel extends JPanel implements
      */
     public void startLoop() {
 	if (timer == null) {
-	    timer = new Timer(interval*1000, this);
+	    timer = new Timer(interval * 1000, this);
 	}
 	timer.start();
     }
@@ -458,7 +458,7 @@ public final class SnmpTreePanel extends JPanel implements
     public void setDelay(int interval) {
 	this.interval = interval;
 	if (timer != null) {
-	    timer.setDelay(interval*1000);
+	    timer.setDelay(interval * 1000);
 	}
 	if (chart != null) {
 	    chart.setDelay(interval);

@@ -102,7 +102,7 @@ public final class SnmpChart extends AbstractTableModel
 	this.showdelta = showdelta;
 	this.charttitle = charttitle;
 	this.interval = interval;
-	this.maxage = 1000*age;
+	this.maxage = 1000 * age;
 	List<String> oids = new ArrayList<>();
 	oids.add(oid);
 	initialize(oids, oids);
@@ -171,7 +171,7 @@ public final class SnmpChart extends AbstractTableModel
 	this.showdelta = showdelta;
 	this.charttitle = charttitle;
 	this.interval = interval;
-	this.maxage = 1000*age;
+	this.maxage = 1000 * age;
 	/*
 	 * The oids here are the numeric form. So, what we do is to put them
 	 * into a TreeMap with the pretty version as the key, so that they are
@@ -282,7 +282,7 @@ public final class SnmpChart extends AbstractTableModel
      * @param age The required maximum age in seconds.
      */
     public void setMaxAge(int age) {
-	maxage = age*1000;
+	maxage = age * 1000;
 	for (TimeSeries ts : tsmap.values()) {
 	    ts.setMaximumItemAge(maxage);
 	}
@@ -301,13 +301,13 @@ public final class SnmpChart extends AbstractTableModel
 		if (showdelta) {
 		    BigInteger bd = newvalue.subtract(valueMap.get(stat));
 		    double dt = (double) (newsnap - lastsnap);
-		    value = 1000.0*(bd.doubleValue()/dt);
+		    value = 1000.0 * (bd.doubleValue() / dt);
 		    valueMap.put(stat, newvalue);
 		} else {
 		    value = newvalue.doubleValue();
 		}
 		tsmap.get(stat).add(new Millisecond(), value);
-	    } catch (SnmpException sne) {}
+	    } catch (SnmpException sne) { }
 	}
 	lastsnap = newsnap;
 	fireTableDataChanged();
@@ -318,7 +318,7 @@ public final class SnmpChart extends AbstractTableModel
      */
     public void startLoop() {
 	if (timer == null) {
-	    timer = new Timer(interval*1000, this);
+	    timer = new Timer(interval * 1000, this);
 	}
 	timer.start();
     }
@@ -340,7 +340,7 @@ public final class SnmpChart extends AbstractTableModel
     public void setDelay(int interval) {
 	this.interval = interval;
 	if (timer != null) {
-	    timer.setDelay(interval*1000);
+	    timer.setDelay(interval * 1000);
 	}
     }
 

@@ -85,7 +85,7 @@ public final class SnmpMibManager {
 	    for (File f : f1.listFiles()) {
 		try {
 		    mibloader.load(f);
-		} catch (Exception e) {}
+		} catch (Exception e) { }
 	    }
 	    for (Mib mib : mibloader.getAllMibs()) {
 		scanMib(mib);

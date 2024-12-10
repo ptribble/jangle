@@ -117,6 +117,6 @@ public class SnmpList {
     // just get the instance
     private String getOIDinstance(String s) {
 	int i = s.lastIndexOf('.');
-	return i < 0 ? null : s.substring(i+1);
+	return i < 0 ? null : s.substring(i + 1);
     }
 }

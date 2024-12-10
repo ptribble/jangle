@@ -55,7 +55,7 @@ public final class SnmpWalk {
 	int i = 0;
 	while (i < args.length) {
 	    if ("-c".equals(args[i])) {
-		if (i+1 < args.length) {
+		if (i + 1 < args.length) {
 		    i++;
 		    community = args[i];
 		} else {

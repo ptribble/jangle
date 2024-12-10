@@ -49,14 +49,14 @@ public final class SnmpPing {
 	int i = 0;
 	while (i < args.length) {
 	    if ("-c".equals(args[i])) {
-		if (i+1 < args.length) {
+		if (i + 1 < args.length) {
 		    i++;
 		    community = args[i];
 		} else {
 		    usage("missing argument to -c flag");
 		}
 	    } else if ("-o".equals(args[i])) {
-		if (i+1 < args.length) {
+		if (i + 1 < args.length) {
 		    i++;
 		    pingoid = args[i];
 		} else {
