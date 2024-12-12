@@ -69,18 +69,11 @@ packages)
 	./mkproto i386 $2 > prototype
 	pkgmk -d /tmp -f prototype -r $(pwd) TRIBjangle
 	pkgtrans -s /tmp /tmp/TRIBjangle.pkg TRIBjangle
+	rm -fr /tmp/TRIBjangle
 	ls -lh /tmp/TRIBjangle.pkg
 	rm prototype
 	rm jangle.installed
 	rm -f depend
-	if [ -x "${THOME}/build/create_zap_from_pkg" ]; then
-	    "${THOME}/build/create_zap_from_pkg" TRIBjangle /tmp/TRIBjangle.pkg
-	else
-	    zip -q -r TRIBjangle TRIBjangle
-	    mv TRIBjangle.zip TRIBjangle.zap
-	    ls -l /tmp/TRIBjangle.pkg /tmp/TRIBjangle.zap
-	fi
-	rm -fr /tmp/TRIBjangle
 	exit 0
 	;;
 esac
