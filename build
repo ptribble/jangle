@@ -18,7 +18,7 @@ JKDIR=${0%/*}
 LIBDIR=${JKDIR}/lib
 JARLIBDIR=${LIBDIR}/java
 
-JFJAR=${JARLIBDIR}/jfreechart-1.5.4.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.5.5.jar
 JANGLEJAR=${JARLIBDIR}/jangle.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar

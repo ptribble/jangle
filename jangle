@@ -37,7 +37,7 @@ case $# in
     ;;
 esac
 
-JFJAR=${JARLIBDIR}/jfreechart-1.5.4.jar
+JFJAR=${JARLIBDIR}/jfreechart-1.5.5.jar
 JINGLEJAR=${JARLIBDIR}/jingle.jar
 JUMBLEJAR=${JARLIBDIR}/jumble.jar
 JANGLEJAR=${JARLIBDIR}/jangle.jar
