@@ -26,6 +26,9 @@ import java.awt.*;
 import uk.co.petertribble.jingle.JingleMultiFrame;
 import uk.co.petertribble.jingle.JingleInfoFrame;
 import uk.co.petertribble.jingle.JingleIntTextField;
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_HOST;
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_COMMUNITY;
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_PORT;
 
 /**
  * A graphical utility to browse and display snmp statistics. It allows the
@@ -37,10 +40,6 @@ import uk.co.petertribble.jingle.JingleIntTextField;
 public final class SnmpBrowser extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
-
-    private static final String DEFAULT_HOST = "localhost";
-    private static final String DEFAULT_COMMUNITY = "public";
-    private static final int DEFAULT_PORT = 161;
 
     private SnmpTreePanel stp;
 

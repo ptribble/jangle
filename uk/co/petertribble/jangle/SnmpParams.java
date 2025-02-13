@@ -28,6 +28,21 @@ package uk.co.petertribble.jangle;
 public class SnmpParams {
 
     /**
+     * Represents the default host to connect to, localhost.
+     */
+    public static final String DEFAULT_HOST = "localhost";
+
+    /**
+     * Represents the default (snmpv1) community string, "public".
+     */
+    public static final String DEFAULT_COMMUNITY = "public";
+
+    /**
+     * Represents the default SNMP port, 161.
+     */
+    public static final int DEFAULT_PORT = 161;
+
+    /**
      * Represents SNMP version 1.
      */
     public static final int SNMPV1 = 0;
@@ -54,7 +69,7 @@ public class SnmpParams {
      * @param server the name of the server
      */
     public SnmpParams(String server) {
-	this(server, "public");
+	this(server, DEFAULT_COMMUNITY);
     }
 
     /**
@@ -65,7 +80,7 @@ public class SnmpParams {
      * @param community the community string to use when accessing this server
      */
     public SnmpParams(String server, String community) {
-	this(server, community, 161);
+	this(server, community, DEFAULT_PORT);
     }
 
     /**
