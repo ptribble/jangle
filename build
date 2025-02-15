@@ -6,7 +6,7 @@
 #
 # Usage:
 #
-# ./build -doc
+# ./build javadoc
 #    Generates the javadoc
 #
 # ./build
@@ -39,7 +39,7 @@ PMDCATRULES="security"
 PMDCACHE="${HOME}/.pmd/cache.jangle"
 
 case $1 in
-doc|-doc)
+javadoc|-javadoc)
 	rm -fr javadoc
 	mkdir javadoc
 	javadoc -classpath "$BUILDJARS:." -d javadoc uk.co.petertribble.jangle
