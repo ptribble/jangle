@@ -39,7 +39,7 @@ PMDCATRULES="security"
 PMDCACHE="${HOME}/.pmd/cache.jangle"
 
 case $1 in
-javadoc|-javadoc)
+javadoc)
 	rm -fr javadoc
 	mkdir javadoc
 	javadoc -classpath "$BUILDJARS:." -d javadoc uk.co.petertribble.jangle
@@ -51,7 +51,7 @@ clean)
 	rm -fr javadoc
 	exit 0
 	;;
-pmd|-pmd)
+pmd)
 	RULESETS=""
 	shift
 	for RULE in $PMDCATRULES "$@"
@@ -80,8 +80,6 @@ packages)
 	;;
 esac
 
-XFLAGS="-Xlint -Xlint:-rawtypes"
-
-javac ${XFLAGS} -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
+javac -Xlint -Xlint:-rawtypes -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 
 jar -cmf jangle.manifest "${JANGLEJAR}" pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
