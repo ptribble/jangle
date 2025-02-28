@@ -21,7 +21,7 @@ echo "i postinstall=./postinstall"
 echo "i postremove=./postinstall"
 
 if [ "X$2" = "Xdeps" ]; then
-  JFCVERS="1.5.4"
+  JFCVERS="1.5.5"
   JFCPKGVER="150"
   PKGTYPE="withdeps"
 cat > depend <<EOF
