@@ -76,12 +76,12 @@ public final class SnmpTreePanel extends JPanel implements
     private static final int TAB_C = 3;
 
     private String startOID;
-    private SnmpObject prevOID;
-    private SnmpObject currentOID;
-    private SnmpController sc;
-    private SnmpList snl;
-    private SnmpMibManager smm;
-    private List<SnmpObject> oidList;
+    private transient SnmpObject prevOID;
+    private transient SnmpObject currentOID;
+    private transient SnmpController sc;
+    private transient SnmpList snl;
+    private transient SnmpMibManager smm;
+    private transient List<SnmpObject> oidList;
 
     private Timer timer;
     private int interval = 30;

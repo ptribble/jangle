@@ -49,7 +49,7 @@ public final class SnmpChart extends AbstractTableModel
 
     private static final SnmpMibManager SMM = SnmpMibManager.getInstance();
 
-    private SnmpController sc;
+    private transient SnmpController sc;
     private JFreeChart chart;
     private Timer timer;
     private int interval;
@@ -60,11 +60,11 @@ public final class SnmpChart extends AbstractTableModel
     private long lastsnap;
     private String charttitle;
 
-    private Map<String, TimeSeries> tsmap;
+    private transient Map<String, TimeSeries> tsmap;
     // save previous values for rates, and used as the backing store for
     // the TableModel
-    private Map<String, BigInteger> valueMap;
-    private List<String> allnames;
+    private transient Map<String, BigInteger> valueMap;
+    private transient List<String> allnames;
 
     /**
      * Create a new SnmpChart, showing the rate of change of the given oid.
