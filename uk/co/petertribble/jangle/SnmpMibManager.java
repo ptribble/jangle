@@ -73,7 +73,7 @@ public final class SnmpMibManager {
      *
      * @param f1 a directory to look for MIB files in
      */
-    protected void readMIBs(File f1) {
+    public void readMIBs(File f1) {
 	if (f1.exists()) {
 	    mibloader.addDir(f1);
 	    for (File f : f1.listFiles()) {
