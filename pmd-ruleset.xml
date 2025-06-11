@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+
+<ruleset name="Jangle Custom Rules"
+    xmlns="http://pmd.sourceforge.net/ruleset/2.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://pmd.sourceforge.net/ruleset/2.0.0 https://pmd.sourceforge.io/ruleset_2_0_0.xsd">
+
+    <description>
+        Jangle custom rules
+    </description>
+
+
+    <rule ref="category/java/security.xml" />
+    <rule ref="rulesets/java/quickstart.xml">
+      <exclude name="CompareObjectsWithEquals"/>
+      <exclude name="EmptyCatchBlock"/>
+      <exclude name="PreserveStackTrace"/>
+      <exclude name="SimplifyBooleanReturns"/>
+    </rule>
+    <rule ref="category/java/performance.xml">
+      <exclude name="AvoidInstantiatingObjectsInLoops"/>
+    </rule>
+    <rule ref="category/java/multithreading.xml">
+      <exclude name="UseConcurrentHashMap"/>
+      <exclude name="AvoidSynchronizedAtMethodLevel"/>
+    </rule>
+    <rule ref="category/java/errorprone.xml">
+      <exclude name="AvoidDuplicateLiterals"/>
+      <exclude name="AvoidLiteralsInIfCondition"/>
+      <exclude name="DoNotTerminateVM"/>
+      <exclude name="CompareObjectsWithEquals"/>
+      <exclude name="EmptyCatchBlock"/>
+      <exclude name="NullAssignment"/>
+      <exclude name="UseProperClassLoader"/>
+    </rule>
+    <rule ref="category/java/bestpractices.xml">
+      <exclude name="SystemPrintln"/>
+      <exclude name="PreserveStackTrace"/>
+    </rule>
+</ruleset>
