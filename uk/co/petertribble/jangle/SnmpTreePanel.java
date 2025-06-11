@@ -76,7 +76,6 @@ public final class SnmpTreePanel extends JPanel implements
     private static final int TAB_C = 3;
 
     private String startOID;
-    private transient SnmpObject prevOID;
     private transient SnmpObject currentOID;
     private transient SnmpController sc;
     private transient SnmpList snl;
@@ -270,7 +269,7 @@ public final class SnmpTreePanel extends JPanel implements
 	jtpr.setEnabledAt(TAB_C, true);
 	// stop any current charts
 	clearChart();
-	prevOID = currentOID;
+	SnmpObject prevOID = currentOID;
 	currentOID = sno;
 	setText(sno);
 	String oid = sno.toString();
