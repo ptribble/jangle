@@ -41,30 +41,85 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * The main tree display.
+     */
     private SnmpTreePanel stp;
 
+    /**
+     * A menu item to exit the application.
+     */
     private JMenuItem exitItem;
+    /**
+     * A menu item to open another cloned window.
+     */
     private JMenuItem cloneItem;
+    /**
+     * A menu item to load MIBs into the application.
+     */
     private JMenuItem loadMibItem;
+    /**
+     * A menu item to close the current window.
+     */
     private JMenuItem closeItem;
+    /**
+     * A menu item to show the help.
+     */
     private JMenuItem helpItem;
+    /**
+     * A menu item to show the license.
+     */
     private JMenuItem licenseItem;
 
-    // delays need to be longer for snmp
+    /**
+     * A button to set the update interval to 5s.
+     */
     private JRadioButtonMenuItem sleepItem5;
+    /**
+     * A button to set the update interval to 15s.
+     */
     private JRadioButtonMenuItem sleepItem15;
+    /**
+     * A button to set the update interval to 30s.
+     */
     private JRadioButtonMenuItem sleepItem30;
+    /**
+     * A button to set the update interval to 1 minute.
+     */
     private JRadioButtonMenuItem sleepItem60;
 
-    // delays need to be longer for snmp
+    /**
+     * A button to set the data retention to 30 minutes.
+     */
     private JRadioButtonMenuItem ageItem30m;
+    /**
+     * A button to set the data retention to 2 hours.
+     */
     private JRadioButtonMenuItem ageItem2h;
+    /**
+     * A button to set the data retention to 8 hours.
+     */
     private JRadioButtonMenuItem ageItem8h;
+    /**
+     * A button to set the data retention to 24 hours.
+     */
     private JRadioButtonMenuItem ageItem24h;
 
+    /**
+     * A field to enter the server name.
+     */
     private JTextField jtserver;
+    /**
+     * A field to enter the server port.
+     */
     private JingleIntTextField jtport;
+    /**
+     * A field to enter the server community string.
+     */
     private JTextField jtcomm;
+    /**
+     * A button that opens the connection to a server to load data.
+     */
     private JButton jbload;
 
     /**

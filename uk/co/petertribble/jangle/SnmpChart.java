@@ -50,14 +50,37 @@ public final class SnmpChart extends AbstractTableModel
     private static final SnmpMibManager SMM = SnmpMibManager.getInstance();
 
     private transient SnmpController sc;
+    /**
+     * The chart being displayed.
+     */
     private JFreeChart chart;
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The interval at which the display is updated.
+     */
     private int interval;
+    /**
+     * The time range for which data is kept.
+     */
     private int maxage;
+    /**
+     * The dataset being displayed.
+     */
     private TimeSeriesCollection dataset;
+    /**
+     * Whether we're showing absolute values or rates.
+     */
     private boolean showdelta;
-    // times in milliseconds
+    /**
+     * Save the last time data was collected, in milliseconds.
+     */
     private long lastsnap;
+    /**
+     * The title of this chart.
+     */
     private String charttitle;
 
     private transient Map<String, TimeSeries> tsmap;

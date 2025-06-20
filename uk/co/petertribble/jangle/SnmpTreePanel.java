@@ -44,37 +44,98 @@ public final class SnmpTreePanel extends JPanel implements
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Object description.
+     */
     private JingleTextPane tp;
+    /**
+     * For the description of the current OID.
+     */
     private JingleTextPane tpdesc;
+    /**
+     * Hold the main details.
+     */
     private JPanel jp1;
+    /**
+     * Hold the main chart.
+     */
     JPanel jp2;
+    /**
+     * A chart for the current OID.
+     */
     private SnmpChart chart;
 
-    // for siblings
+    /**
+     * Hold the chart for siblings.
+     */
     private JPanel jp3;
+    /**
+     * Hold the text for siblings.
+     */
     private JPanel jp3t;
+    /**
+     * For the description of siblings of the current OID.
+     */
     private JingleTextPane tpsiblings;
+    /**
+     * A chart for siblings of the current OID.
+     */
     private SnmpChart schart;
 
-    // for cousins
+    /**
+     * Holds the chart for cousins.
+     */
     private JPanel jp4;
+    /**
+     * Hold the text for cousins.
+     */
     private JPanel jp4t;
+    /**
+     * For the description of cousins of the current OID.
+     */
     private JingleTextPane tpcousins;
+    /**
+     * A chart for cousins of the current OID.
+     */
     private SnmpChart cchart;
 
+    /**
+     * Save errors so we can give friendlier error feedback.
+     */
     Exception savederror;
 
+    /**
+     * The OIDs as a list.
+     */
     private JList<SnmpObject> slist;
-    JProgressBar jpb;
+    /**
+     * The model backing th OIDs as a list.
+     */
     private DefaultListModel<SnmpObject> model;
+    /**
+     * Shows loading progress.
+     */
+    JProgressBar jpb;
+    /**
+     * The left tabbed pane, holding the tree and list of OIDs.
+     */
     private JTabbedPane jtpl;
+    /**
+     * The right tabbed pane, holding the output display.
+     */
     private JTabbedPane jtpr;
+    /**
+     * The OIDs as a tree.
+     */
     private JTree stree;
     private static final int TAB_D = 0;
     private static final int TAB_A = 1;
     private static final int TAB_S = 2;
     private static final int TAB_C = 3;
 
+    /**
+     * The OID to start walking from.
+     */
     private String startOID;
     private transient SnmpObject currentOID;
     private transient SnmpController sc;
@@ -82,8 +143,17 @@ public final class SnmpTreePanel extends JPanel implements
     private transient SnmpMibManager smm;
     private transient List<SnmpObject> oidList;
 
+    /**
+     * A Timer to update the display in a loop.
+     */
     private Timer timer;
+    /**
+     * The interval at which the display is updated.
+     */
     private int interval = 30;
+    /**
+     * The time range for which data is kept.
+     */
     private int age = 1800;
 
     /**
