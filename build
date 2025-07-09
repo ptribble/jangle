@@ -13,7 +13,7 @@
 #    Builds all the java classes
 #
 
-PATH=/usr/jdk/instances/jdk1.8.0/bin:$PATH
+PATH=/usr/jdk/instances/jdk11/bin:$PATH
 export PATH
 
 JKDIR=${0%/*}
