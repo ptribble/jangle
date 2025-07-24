@@ -1,5 +1,6 @@
+# SPDX-FileCopyrightText: 2025 Peter Tribble
+# SPDX-License-Identifier: CDDL-1.0
 [Desktop Entry]
-Encoding=UTF-8
 Version=1.0
 Name=Jangle
 Comment=Graphical snmp browser
@@ -7,4 +8,4 @@ Exec=jangle browser
 Icon=jangle
 Terminal=false
 Type=Application
-Categories=System;Utility;
+Categories=System;Monitor;
