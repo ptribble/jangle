@@ -25,7 +25,7 @@ import java.util.TreeMap;
 import java.util.HashMap;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.Instant;
 import java.awt.event.*;
 import java.math.BigInteger;
 import javax.swing.Timer;
@@ -310,7 +310,7 @@ public final class SnmpChart extends AbstractTableModel
      */
     public void updateAccessory() {
 	double value;
-	long newsnap = new Date().getTime();
+	long newsnap = Instant.now().toEpochMilli();
 	// loop over all oids
 	for (String stat : tsmap.keySet()) {
 	    try {
