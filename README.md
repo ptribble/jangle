@@ -1,17 +1,18 @@
 jangle contains code under the following licenses:
 
 The main application itself is licensed under the CDDL. See the file
-LICENSE-CDDL.txt (also as help/CDDL.txt) for details
+LICENSES/CDDL-1.0.txt (also as help/CDDL.txt) for details
 
 jangle incorporates JFreeChart, Copyright 2000-present by David Gilbert and
-Contributors. JFreeChart is covered by the LGPL - see the file LICENSE-LGPL.txt,
-and can be obtained from https://www.jfree.org/jfreechart/.
+Contributors. JFreeChart is covered by the LGPL - see the file
+LICENSES/LGPL-2.1+.txt -and can be obtained from
+https://www.jfree.org/jfreechart/.
 
 jangle incorporates a couple of sets of utility classes. See
 http://www.petertribble.co.uk/Solaris/jingle.html
 http://www.petertribble.co.uk/Solaris/jumble.html
 
-jangle incorporates Mibble, see also the file LICENSE-mibble.txt.
+jangle incorporates Mibble, see also the file LICENSES/LICENSE-mibble.txt.
 
 MIBBLE LICENSE
 ==============
@@ -19,8 +20,8 @@ MIBBLE LICENSE
 The software in this package is distributed under the GNU General
 Public License with the "Library Exception" described below. A copy
 of GNU General Public License (GPL) is included in this distribution,
-in the file LICENSE-GPL.txt. All the files distributed under GPL also
-include the following special exception:
+in the file LICENSES/LICENSE-GPL.txt. All the files distributed under
+GPL also include the following special exception:
 
     As a special exception, the copyright holders of this library
     give you permission to link this library with independent modules
@@ -47,7 +48,7 @@ document verbatim in any medium, provided that this copyright notice
 is left intact.
 
 
-jangle incorporates Java SNMP, see also the file LICENSE-SNMP.txt.
+jangle incorporates Java SNMP, see also the file LICENSES/LICENSE-SNMP.txt.
 
 
 SNMP Package
