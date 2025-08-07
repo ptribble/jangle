@@ -56,6 +56,8 @@ public final class SnmpMibManager {
 	oid2nameMap = new HashMap<>();
 	name2oidMap = new HashMap<>();
 	mibloader = new MibLoader();
+	// Tribblix
+	readMIBs("/etc/net-snmp/snmp/mibs");
 	// solaris/opensolaris
 	readMIBs("/etc/sma/snmp/mibs");
 	// ubuntu
