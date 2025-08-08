@@ -10,7 +10,7 @@
 #    Generates the javadoc
 #
 # ./build
-#    Builds all the java classes
+#    Builds all the java classes and creates the jar
 #
 
 PATH=/usr/jdk/instances/jdk11/bin:$PATH
@@ -65,6 +65,7 @@ spotbugs)
 	#
 	javac -Xlint -Xlint:-rawtypes -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 	spotbugs -auxclasspath $(echo lib/java/* | sed 's= =:=g') uk
+	rm -f $(find uk/co -type f -name '*.class')
 	exit 0
 	;;
 packages)
@@ -84,3 +85,5 @@ esac
 javac -Xlint -Xlint:-rawtypes -classpath ".:${BUILDJARS}" uk/co/petertribble/jangle/*.java
 
 jar -cmf jangle.manifest "${JANGLEJAR}" pixmaps/*.png help/*.html help/CDDL.txt properties/*.properties $(find uk/co -name '*.class')
+
+rm -f $(find uk/co -type f -name '*.class')
