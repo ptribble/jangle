@@ -41,7 +41,7 @@ public class SnmpObject {
      * @param oid the OID
      * @param value the value of this object
      */
-    public SnmpObject(SNMPObjectIdentifier oid, SNMPObject value) {
+    public SnmpObject(final SNMPObjectIdentifier oid, final SNMPObject value) {
 	this.oid = oid;
 	this.value = value;
     }
@@ -73,7 +73,7 @@ public class SnmpObject {
      *
      * @see #getValue
      */
-    public void setValue(SNMPObject value) {
+    public void setValue(final SNMPObject value) {
 	this.value = value;
     }
 

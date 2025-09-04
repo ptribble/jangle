@@ -169,7 +169,7 @@ public final class SnmpTreePanel extends JPanel implements
      *
      * @param startOID the OID to start from
      */
-    public SnmpTreePanel(String startOID) {
+    public SnmpTreePanel(final String startOID) {
 	this.startOID = startOID;
 	setLayout(new BorderLayout());
 
@@ -238,7 +238,7 @@ public final class SnmpTreePanel extends JPanel implements
      *
      * @param params details of the snmp server to query
      */
-    public void exploreServer(SnmpParams params) {
+    public void exploreServer(final SnmpParams params) {
 	sc = new SnmpController(params);
 	snl = new SnmpList(sc);
 	jpb = new JProgressBar(0, 1);
@@ -295,7 +295,7 @@ public final class SnmpTreePanel extends JPanel implements
 	timer.start();
     }
 
-    private void setPanel(SnmpTreeNode node) {
+    private void setPanel(final SnmpTreeNode node) {
 	if (node != null) {
 	    if (node.getUserObject() instanceof SnmpObject) {
 		showObject((SnmpObject) node.getUserObject());
@@ -310,7 +310,7 @@ public final class SnmpTreePanel extends JPanel implements
      * We only do any work if it exists - if we can't find a MIB entry
      * then we leave the display unchanged.
      */
-    private void showObject(String oid) {
+    private void showObject(final String oid) {
 	if (smm == null) {
 	    smm = SnmpMibManager.getInstance();
 	}
@@ -330,7 +330,7 @@ public final class SnmpTreePanel extends JPanel implements
      * object, leave the sibling chart intact; if the new object is a
      * cousin of the current object, leave the cousin chart intact.
      */
-    private void showObject(SnmpObject sno) {
+    private void showObject(final SnmpObject sno) {
 	if (smm == null) {
 	    smm = SnmpMibManager.getInstance();
 	}
@@ -365,7 +365,7 @@ public final class SnmpTreePanel extends JPanel implements
     /*
      * Check whether two SnmpObjects are siblings
      */
-    private boolean isSibling(SnmpObject sn1, SnmpObject sn2) {
+    private boolean isSibling(final SnmpObject sn1, final SnmpObject sn2) {
 	if (sn1 == null || sn2 == null) {
 	    return false;
 	}
@@ -375,14 +375,14 @@ public final class SnmpTreePanel extends JPanel implements
     /*
      * Check whether two SnmpObjects are cousins
      */
-    private boolean isCousin(SnmpObject sn1, SnmpObject sn2) {
+    private boolean isCousin(final SnmpObject sn1, final SnmpObject sn2) {
 	if (sn1 == null || sn2 == null) {
 	    return false;
 	}
 	return snl.getCousins(sn1.toString()).contains(sn2);
     }
 
-    private boolean canChart(SnmpObject sno) {
+    private boolean canChart(final SnmpObject sno) {
 	/*
 	 * This is only called from showObject, so we can assume that smm has
 	 * been initialized. We manually refuse to chart certain names that
@@ -442,7 +442,7 @@ public final class SnmpTreePanel extends JPanel implements
 	}
     }
 
-    private void showSiblings(SnmpObject sno) {
+    private void showSiblings(final SnmpObject sno) {
 	String oid = sno.toString();
 	List<SnmpObject> ls = snl.getSiblings(oid);
 	if (ls.size() > 1) {
@@ -468,7 +468,7 @@ public final class SnmpTreePanel extends JPanel implements
 	}
     }
 
-    private void showCousins(SnmpObject sno) {
+    private void showCousins(final SnmpObject sno) {
 	String oid = sno.toString();
 	List<SnmpObject> alloids = snl.getCousins(oid);
 	if (alloids.size() > 1) {
@@ -500,7 +500,7 @@ public final class SnmpTreePanel extends JPanel implements
 	}
     }
 
-    private void setText(SnmpObject sno) {
+    private void setText(final SnmpObject sno) {
 	StringBuilder sb = new StringBuilder(32);
 	sb.append("OID: ").append(smm.prettifyOID(sno));
 	String typeString = sno.getTypeString();
@@ -518,7 +518,7 @@ public final class SnmpTreePanel extends JPanel implements
      *
      * @param interval the desired update delay in seconds
      */
-    public void setDelay(int interval) {
+    public void setDelay(final int interval) {
 	this.interval = interval;
 	if (timer != null) {
 	    timer.setDelay(interval * 1000);
@@ -539,7 +539,7 @@ public final class SnmpTreePanel extends JPanel implements
      *
      * @param age The required maximum chart age in seconds.
      */
-    public void setMaxAge(int age) {
+    public void setMaxAge(final int age) {
 	this.age = age;
 	if (chart != null) {
 	    chart.setMaxAge(age);
@@ -650,7 +650,7 @@ public final class SnmpTreePanel extends JPanel implements
 
     // handle ListSelectionListener events
     @Override
-    public void valueChanged(ListSelectionEvent e) {
+    public void valueChanged(final ListSelectionEvent e) {
         if (!e.getValueIsAdjusting() && slist.getSelectedIndex() != -1) {
 	    Object o = slist.getSelectedValue();
 	    if (o instanceof SnmpObject) {
@@ -661,7 +661,7 @@ public final class SnmpTreePanel extends JPanel implements
 
     // handle TreeSelectionListener events
     @Override
-    public void valueChanged(TreeSelectionEvent e) {
+    public void valueChanged(final TreeSelectionEvent e) {
 	TreePath tpth = e.getNewLeadSelectionPath();
 	if (tpth != null) {
 	    setPanel((SnmpTreeNode) tpth.getLastPathComponent());
@@ -670,7 +670,7 @@ public final class SnmpTreePanel extends JPanel implements
 
     // handle timer events
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	updateCurrent();
     }
 }

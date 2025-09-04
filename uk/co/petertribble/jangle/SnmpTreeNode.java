@@ -36,7 +36,7 @@ public final class SnmpTreeNode extends DefaultMutableTreeNode {
      *
      * @param o The object to store in this SnmpTreeNode
      */
-    public SnmpTreeNode(Object o) {
+    public SnmpTreeNode(final Object o) {
 	super(o);
     }
 

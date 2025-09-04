@@ -98,8 +98,8 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, String oid, String charttitle,
-		int interval, int age) {
+    public SnmpChart(final SnmpController sc, final String oid,
+		final String charttitle, final int interval, final int age) {
 	this(sc, oid, charttitle, true, interval, age);
     }
 
@@ -113,8 +113,9 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, String oid, String charttitle,
-		boolean showdelta, int interval, int age) {
+    public SnmpChart(final SnmpController sc, final String oid,
+		final String charttitle,
+		final boolean showdelta, final int interval, final int age) {
 	this.sc = sc;
 	this.showdelta = showdelta;
 	this.charttitle = charttitle;
@@ -134,8 +135,8 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List<SnmpObject> oids,
-		String charttitle, int interval, int age) {
+    public SnmpChart(final SnmpController sc, final List<SnmpObject> oids,
+		final String charttitle, final int interval, final int age) {
 	this(sc, oids, charttitle, true, interval, age);
     }
 
@@ -149,9 +150,9 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List<SnmpObject> oids,
-		List<SnmpObject> alloids,
-		String charttitle, int interval, int age) {
+    public SnmpChart(final SnmpController sc, final List<SnmpObject> oids,
+		final List<SnmpObject> alloids,
+		final String charttitle, final int interval, final int age) {
 	this(sc, oids, alloids, charttitle, true, interval, age);
     }
 
@@ -165,8 +166,9 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List<SnmpObject> snos,
-		String charttitle, boolean showdelta, int interval, int age) {
+    public SnmpChart(final SnmpController sc, final List<SnmpObject> snos,
+		final String charttitle, final boolean showdelta,
+		final int interval, final int age) {
 	this(sc, snos, snos, charttitle, showdelta, interval, age);
     }
 
@@ -181,9 +183,9 @@ public final class SnmpChart extends AbstractTableModel
      * @param interval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(SnmpController sc, List<SnmpObject> snos,
-		List<SnmpObject> tsnos,
-		String charttitle, boolean showdelta, int interval, int age) {
+    public SnmpChart(final SnmpController sc, final List<SnmpObject> snos,
+		final List<SnmpObject> tsnos, final String charttitle,
+		final boolean showdelta, final int interval, final int age) {
 	this.sc = sc;
 	this.showdelta = showdelta;
 	this.charttitle = charttitle;
@@ -206,7 +208,8 @@ public final class SnmpChart extends AbstractTableModel
 		   new ArrayList<>(alloids.values()));
     }
 
-    private void initialize(List<String> oids, List<String> alloids) {
+    private void initialize(final List<String> oids,
+			    final List<String> alloids) {
 	allnames = alloids;
 	tsmap = new HashMap<>();
 	valueMap = new HashMap<>();
@@ -274,7 +277,7 @@ public final class SnmpChart extends AbstractTableModel
      *
      * @param oid the name of the oid to add
      */
-    private void addOid(String oid) {
+    private void addOid(final String oid) {
 	if (tsmap.containsKey(oid)) {
 	    dataset.addSeries(tsmap.get(oid));
 	}
@@ -288,7 +291,7 @@ public final class SnmpChart extends AbstractTableModel
      * @param oid the name of the oid to remove
      */
     // FIXME is it valid to remove all oids?
-    private void removeOid(String oid) {
+    private void removeOid(final String oid) {
 	dataset.removeSeries(tsmap.get(oid));
     }
 
@@ -298,7 +301,7 @@ public final class SnmpChart extends AbstractTableModel
      *
      * @param age The required maximum age in seconds.
      */
-    public void setMaxAge(int age) {
+    public void setMaxAge(final int age) {
 	maxage = age * 1000;
 	for (TimeSeries ts : tsmap.values()) {
 	    ts.setMaximumItemAge(maxage);
@@ -354,7 +357,7 @@ public final class SnmpChart extends AbstractTableModel
      *
      * @param interval the delay value in seconds
      */
-    public void setDelay(int interval) {
+    public void setDelay(final int interval) {
 	this.interval = interval;
 	if (timer != null) {
 	    timer.setDelay(interval * 1000);
@@ -362,11 +365,11 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	updateAccessory();
     }
 
-    private String getStringValue(String oid) {
+    private String getStringValue(final String oid) {
 	try {
 	    return sc.getValue(oid).valueString();
 	} catch (SnmpException sne) {
@@ -388,7 +391,7 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     @Override
-    public Object getValueAt(int row, int column) {
+    public Object getValueAt(final int row, final int column) {
 	String oid = allnames.get(row);
 	if (column == 0) {
 	    return SMM.prettifyOID(oid);
@@ -402,7 +405,7 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     @Override
-    public String getColumnName(int column) {
+    public String getColumnName(final int column) {
 	if (column == 0) {
 	    return SnmpResources.getString("COLUMN.OID");
 	} else if (column == 1) {
@@ -413,7 +416,7 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     @Override
-    public Class<?> getColumnClass(int column) {
+    public Class<?> getColumnClass(final int column) {
 	if (column == 0) {
 	    return String.class;
 	} else if (column == 1) {
@@ -424,7 +427,7 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     @Override
-    public boolean isCellEditable(int row, int column) {
+    public boolean isCellEditable(final int row, final int column) {
 	String oid = allnames.get(row);
 	return column == 2 && valueMap.get(oid) != null;
     }
@@ -436,7 +439,8 @@ public final class SnmpChart extends AbstractTableModel
      * output that it generates.
      */
     @Override
-    public void setValueAt(Object value, int row, int column) {
+    public void setValueAt(final Object value, final int row,
+			   final int column) {
 	if (column == 2) {
 	    String oid = allnames.get(row);
 	    if (((Boolean) value).booleanValue()) {

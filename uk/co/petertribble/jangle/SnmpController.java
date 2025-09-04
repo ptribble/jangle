@@ -43,7 +43,7 @@ public class SnmpController {
      *
      * @param params an SnmpParams with connection details
      */
-    public SnmpController(SnmpParams params) {
+    public SnmpController(final SnmpParams params) {
 	this.params = params;
 	initialize();
     }
@@ -79,7 +79,8 @@ public class SnmpController {
     }
 
     // FIXME throw the saved SnmpException if we're uninitialized
-    private SNMPVarBindList getNextMIBEntry(String s) throws SnmpException {
+    private SNMPVarBindList getNextMIBEntry(final String s)
+	throws SnmpException {
 	try {
 	    return getInterfaceV1().getNextMIBEntry(s);
 	} catch (IOException ioe) {
@@ -104,7 +105,7 @@ public class SnmpController {
      *
      * @throws SnmpException if an error occurs
      */
-    public SnmpObject getNext(String s) throws SnmpException {
+    public SnmpObject getNext(final String s) throws SnmpException {
 	return getSno(getNextMIBEntry(s));
     }
 
@@ -117,11 +118,11 @@ public class SnmpController {
      *
      * @throws SnmpException if an error occurs
      */
-    public SnmpObject getNext(SnmpObject sno) throws SnmpException {
+    public SnmpObject getNext(final SnmpObject sno) throws SnmpException {
 	return getNext(sno.toString());
     }
 
-    private SNMPVarBindList getMIBEntry(String s) throws SnmpException {
+    private SNMPVarBindList getMIBEntry(final String s) throws SnmpException {
 	try {
 	    return getInterfaceV1().getMIBEntry(s);
 	} catch (IOException ioe) {
@@ -142,11 +143,11 @@ public class SnmpController {
      *
      * @throws SnmpException if an error occurs
      */
-    public SnmpObject getValue(String s) throws SnmpException {
+    public SnmpObject getValue(final String s) throws SnmpException {
 	return getSno(getMIBEntry(s));
     }
 
-    private SnmpObject getSno(SNMPVarBindList newVars) {
+    private SnmpObject getSno(final SNMPVarBindList newVars) {
 	if (newVars == null) {
 	    return null;
 	}

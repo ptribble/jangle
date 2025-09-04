@@ -66,7 +66,7 @@ public final class SnmpMibManager {
 	readMIBs("/opt/Net-SNMP/share/snmp/mibs");
     }
 
-    private void readMIBs(String location) {
+    private void readMIBs(final String location) {
 	readMIBs(new File(location));
     }
 
@@ -75,7 +75,7 @@ public final class SnmpMibManager {
      *
      * @param f1 a directory to look for MIB files in
      */
-    public void readMIBs(File f1) {
+    public void readMIBs(final File f1) {
 	if (f1.exists()) {
 	    mibloader.addDir(f1);
 	    for (File f : f1.listFiles()) {
@@ -89,7 +89,7 @@ public final class SnmpMibManager {
 	}
     }
 
-    private void scanMib(Mib mib) {
+    private void scanMib(final Mib mib) {
 	for (Object o : mib.getAllSymbols()) {
 	    MibSymbol symbol = (MibSymbol) o;
 	    ObjectIdentifierValue value = extractOid(symbol);
@@ -101,7 +101,7 @@ public final class SnmpMibManager {
 	}
     }
 
-    private ObjectIdentifierValue extractOid(MibSymbol symbol) {
+    private ObjectIdentifierValue extractOid(final MibSymbol symbol) {
 	if (symbol instanceof MibValueSymbol) {
 	    MibValue value = ((MibValueSymbol) symbol).getValue();
 	    if (value instanceof ObjectIdentifierValue) {
@@ -120,7 +120,7 @@ public final class SnmpMibManager {
      *
      * @return a prettified version of the given oid
      */
-    public String prettifyOID(SnmpObject sno) {
+    public String prettifyOID(final SnmpObject sno) {
 	return prettifyOID(sno.toString());
     }
 
@@ -133,7 +133,7 @@ public final class SnmpMibManager {
      *
      * @return a prettified version of the given oid
      */
-    public String prettifyOID(String oid) {
+    public String prettifyOID(final String oid) {
 	// start with the given value
 	String valname = oidMap.get(oid);
 	if (valname != null) {
@@ -152,7 +152,7 @@ public final class SnmpMibManager {
 	return oid;
     }
 
-    private String getMibForOID(String oid) {
+    private String getMibForOID(final String oid) {
 	return oid2nameMap.get(oid);
     }
 
@@ -164,7 +164,7 @@ public final class SnmpMibManager {
      *
      * @return the closest MIB entry for this OID string
      */
-    public String getNearestMibForOID(String oid) {
+    public String getNearestMibForOID(final String oid) {
 	String namepar = getMibForOID(oid);
 	if (namepar != null) {
 	    return namepar;
@@ -187,7 +187,7 @@ public final class SnmpMibManager {
      *
      * @return the OID corresponding to this name
      */
-    public String getOIDForName(String name) {
+    public String getOIDForName(final String name) {
 	return name2oidMap.get(name);
     }
 }

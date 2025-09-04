@@ -38,7 +38,7 @@ public final class SnmpPing {
      *
      * @param args command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	boolean gothosts = false;
 	int i = 0;
 	while (i < args.length) {
@@ -68,7 +68,7 @@ public final class SnmpPing {
 	}
     }
 
-    private static void doPing(String host) {
+    private static void doPing(final String host) {
 	try {
 	    SnmpParams snp = new SnmpParams(host, community);
 	    SnmpController sc = new SnmpController(snp);
@@ -79,7 +79,7 @@ public final class SnmpPing {
 	}
     }
 
-    private static void printout(String host, SnmpObject sno) {
+    private static void printout(final String host, final SnmpObject sno) {
 	String type = sno.getTypeString();
 	System.out.print(host + ": " + sno.toString() + " = ");
 	if ("OctetString".equals(type)) {
@@ -89,7 +89,7 @@ public final class SnmpPing {
 	}
     }
 
-    private static void usage(String s) {
+    private static void usage(final String s) {
 	System.err.println("Error: " + s);
 	System.err.println(
 	    "Usage: snmpping [-c community] [-o oid] host [ host ...]");

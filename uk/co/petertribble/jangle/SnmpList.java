@@ -39,7 +39,7 @@ public class SnmpList {
      *
      * @param sc the SnmpController to use to retrieve the data
      */
-    public SnmpList(SnmpController sc) {
+    public SnmpList(final SnmpController sc) {
 	this.sc = sc;
     }
 
@@ -52,7 +52,8 @@ public class SnmpList {
      *
      * @throws SnmpException if an error occurs
      */
-    public List<SnmpObject> getList(String startOID) throws SnmpException {
+    public List<SnmpObject> getList(final String startOID)
+	    throws SnmpException {
 	oidList = new ArrayList<>();
 	SnmpObject sno = sc.getNext(startOID);
 	while (sno != null) {
@@ -70,7 +71,7 @@ public class SnmpList {
      *
      * @return the List of siblings of the given oid
      */
-    public List<SnmpObject> getSiblings(String oid) {
+    public List<SnmpObject> getSiblings(final String oid) {
 	List<SnmpObject> lso = new ArrayList<>();
 	String sparent = SnmpUtil.getParentOID(oid);
 	if (sparent != null) {
@@ -91,7 +92,7 @@ public class SnmpList {
      *
      * @return the List of cousins of the given oid
      */
-    public List<SnmpObject> getCousins(String oid) {
+    public List<SnmpObject> getCousins(final String oid) {
 	List<SnmpObject> lso = new ArrayList<>();
 	String sinst = getOIDinstance(oid);
 	String sgparent = SnmpUtil.getParentOID(SnmpUtil.getParentOID(oid));
@@ -109,7 +110,7 @@ public class SnmpList {
     }
 
     // just get the instance
-    private String getOIDinstance(String s) {
+    private String getOIDinstance(final String s) {
 	int i = s.lastIndexOf('.');
 	return i < 0 ? null : s.substring(i + 1);
     }

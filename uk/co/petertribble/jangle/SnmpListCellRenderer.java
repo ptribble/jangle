@@ -35,11 +35,11 @@ public final class SnmpListCellRenderer extends DefaultListCellRenderer {
     private static final long serialVersionUID = 1L;
 
     @Override
-    public Component getListCellRendererComponent(JList list,
-							Object value,
-							int index,
-							boolean isSelected,
-							boolean cellHasFocus) {
+    public Component getListCellRendererComponent(final JList list,
+						final Object value,
+						final int index,
+						final boolean isSelected,
+						final boolean cellHasFocus) {
 	setText(SnmpMibManager.getInstance().prettifyOID(value.toString()));
 	return this;
     }

@@ -259,7 +259,7 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
 
     class WindowExit extends WindowAdapter {
 	@Override
-	public void windowClosing(WindowEvent we) {
+	public void windowClosing(final WindowEvent we) {
 	    JingleMultiFrame.unregister(SnmpBrowser.this);
 	}
     }
@@ -269,7 +269,7 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
      *
      * @param i the delay value in seconds
      */
-    private void setDelay(int i) {
+    private void setDelay(final int i) {
 	stp.setDelay(i);
     }
 
@@ -278,7 +278,7 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
      *
      * @param i the maximum graph age in seconds
      */
-    private void setMaxAge(int i) {
+    private void setMaxAge(final int i) {
 	stp.setMaxAge(i);
     }
 
@@ -305,7 +305,7 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(final ActionEvent e) {
 	if (e.getSource() == cloneItem) {
 	    new SnmpBrowser();
 	} else if (e.getSource() == closeItem) {
@@ -346,7 +346,7 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
      *
      * @param args command line arguments, ignored
      */
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
 	new SnmpBrowser();
     }
 }

@@ -68,7 +68,7 @@ public class SnmpParams {
      *
      * @param server the name of the server
      */
-    public SnmpParams(String server) {
+    public SnmpParams(final String server) {
 	this(server, DEFAULT_COMMUNITY);
     }
 
@@ -79,7 +79,7 @@ public class SnmpParams {
      * @param server the name of the server
      * @param community the community string to use when accessing this server
      */
-    public SnmpParams(String server, String community) {
+    public SnmpParams(final String server, final String community) {
 	this(server, community, DEFAULT_PORT);
     }
 
@@ -91,7 +91,8 @@ public class SnmpParams {
      * @param community the community string to use when accessing this server
      * @param port the snmp port to connect to
      */
-    public SnmpParams(String server, String community, int port) {
+    public SnmpParams(final String server, final String community,
+		      final int port) {
 	this(server, community, port, SNMPV1);
     }
 
@@ -104,7 +105,8 @@ public class SnmpParams {
      * @param port the snmp port to connect to
      * @param version the SNMP version to use
      */
-    public SnmpParams(String server, String community, int port, int version) {
+    public SnmpParams(final String server, final String community,
+		      final int port, final int version) {
 	this.server = server;
 	this.community = community;
 	this.port = port;

@@ -41,7 +41,7 @@ public class SnmpException extends Exception {
      *
      * @param s the text of the exception
      */
-    public SnmpException(String s) {
+    public SnmpException(final String s) {
 	super(s);
     }
 }

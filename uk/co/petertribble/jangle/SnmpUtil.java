@@ -39,7 +39,7 @@ public final class SnmpUtil {
      *
      * @return the parent of the given OID
      */
-    public static String getParentOID(String s) {
+    public static String getParentOID(final String s) {
 	int i = s.lastIndexOf('.');
 	return i < 0 ? null : s.substring(0, i);
     }
@@ -53,7 +53,7 @@ public final class SnmpUtil {
      *
      * @return a String representation of the date
      */
-    public static String getOctetDate(String s) {
+    public static String getOctetDate(final String s) {
 	/*
 	 * http://net-snmp.sourceforge.net/docs/mibs/host.html#DateAndTime
 	 */
@@ -80,7 +80,7 @@ public final class SnmpUtil {
      *
      * @return true if the value represents a date
      */
-    public static boolean isDate(SnmpObject sno) {
+    public static boolean isDate(final SnmpObject sno) {
 	String sp = getParentOID(sno.toString());
 	// hrSWInstalledDate
 	if ("1.3.6.1.2.1.25.6.3.1.5".equals(sp)) {
@@ -108,7 +108,7 @@ public final class SnmpUtil {
      *
      * @return the value as a nicely formatted String
      */
-    public static String niceString(SnmpObject sno) {
+    public static String niceString(final SnmpObject sno) {
 	if (isDate(sno)) {
 	    return getOctetDate(
 			((SNMPOctetString) sno.getValue()).toHexString());
