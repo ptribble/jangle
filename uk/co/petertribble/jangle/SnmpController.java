@@ -99,7 +99,7 @@ public class SnmpController {
     /**
      * Return the next SnmpObject after the given entry.
      *
-     * @param s  a String naming the oid of interest
+     * @param s a String naming the oid of interest
      *
      * @return an SnmpObject object
      *
@@ -112,7 +112,7 @@ public class SnmpController {
     /**
      * Return the next SnmpObject after the given entry.
      *
-     * @param sno  a SnmpObject naming the oid of interest
+     * @param sno an SnmpObject naming the oid of interest
      *
      * @return an SnmpObject object
      *
@@ -137,7 +137,7 @@ public class SnmpController {
     /**
      * Return the SnmpObject corresponding to the given entry.
      *
-     * @param s  a String naming the oid of interest
+     * @param s a String naming the oid of interest
      *
      * @return an SnmpObject object
      *

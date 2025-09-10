@@ -265,7 +265,7 @@ public final class SnmpChart extends AbstractTableModel
     /**
      * Return the chart that is created.
      *
-     * @return  The created chart
+     * @return the created chart
      */
     public JFreeChart getChart() {
 	return chart;
