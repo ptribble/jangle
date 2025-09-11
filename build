@@ -70,7 +70,7 @@ spotbugs)
 	;;
 packages)
 	sed s:INSTALLED=false:INSTALLED=true: jangle > jangle.installed
-	./mkproto i386 $2 > prototype
+	./mkproto $2 > prototype
 	pkgmk -d /tmp -f prototype -r $(pwd) TRIBjangle
 	pkgtrans -s /tmp /tmp/TRIBjangle.pkg TRIBjangle
 	rm -fr /tmp/TRIBjangle

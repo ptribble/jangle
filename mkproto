@@ -20,7 +20,7 @@ echo "i pkginfo=./pkginfo"
 echo "i postinstall=./postinstall"
 echo "i postremove=./postinstall"
 
-if [ "X$2" = "Xdeps" ]; then
+if [ "X$1" = "Xdeps" ]; then
   JFCVERS="1.5.6"
   JFCPKGVER="150"
   PKGTYPE="withdeps"
