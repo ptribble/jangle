@@ -92,35 +92,35 @@ public final class SnmpChart extends AbstractTableModel
     /**
      * Create a new SnmpChart, showing the rate of change of the given oid.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param oid the oid to show
-     * @param charttitle the title to show on the chart
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final String oid,
-		final String charttitle, final int interval, final int age) {
-	this(sc, oid, charttitle, true, interval, age);
+    public SnmpChart(final SnmpController nsc, final String oid,
+		final String ctitle, final int ninterval, final int age) {
+	this(nsc, oid, ctitle, true, ninterval, age);
     }
 
     /**
      * Create a new SnmpChart, showing the given oid.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param oid the oid to show
-     * @param charttitle the title to show on the chart
-     * @param showdelta if true, show rates instead of values
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param delta if true, show rates instead of values
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final String oid,
-		final String charttitle,
-		final boolean showdelta, final int interval, final int age) {
-	this.sc = sc;
-	this.showdelta = showdelta;
-	this.charttitle = charttitle;
-	this.interval = interval;
-	this.maxage = 1000 * age;
+    public SnmpChart(final SnmpController nsc, final String oid,
+		final String ctitle,
+		final boolean delta, final int ninterval, final int age) {
+	sc = nsc;
+	showdelta = delta;
+	charttitle = ctitle;
+	interval = ninterval;
+	maxage = 1000 * age;
 	List<String> oids = new ArrayList<>();
 	oids.add(oid);
 	initialize(oids, oids);
@@ -129,68 +129,68 @@ public final class SnmpChart extends AbstractTableModel
     /**
      * Create a new SnmpChart, showing the rate of change of the given OIDs.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param oids a List of oids to show
-     * @param charttitle the title to show on the chart
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final List<SnmpObject> oids,
-		final String charttitle, final int interval, final int age) {
-	this(sc, oids, charttitle, true, interval, age);
+    public SnmpChart(final SnmpController nsc, final List<SnmpObject> oids,
+		final String ctitle, final int ninterval, final int age) {
+	this(nsc, oids, ctitle, true, ninterval, age);
     }
 
     /**
      * Create a new SnmpChart, showing the rate of change of the given OIDs.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param oids a List of oids to chart
      * @param alloids a List of all oids, including those not charted
-     * @param charttitle the title to show on the chart
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final List<SnmpObject> oids,
+    public SnmpChart(final SnmpController nsc, final List<SnmpObject> oids,
 		final List<SnmpObject> alloids,
-		final String charttitle, final int interval, final int age) {
-	this(sc, oids, alloids, charttitle, true, interval, age);
+		final String ctitle, final int ninterval, final int age) {
+	this(nsc, oids, alloids, ctitle, true, ninterval, age);
     }
 
     /**
      * Create a new SnmpChart, showing the rate of change of the given OIDs.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param snos a List of oids to show
-     * @param charttitle the title to show on the chart
-     * @param showdelta if true, show rates instead of values
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param delta if true, show rates instead of values
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final List<SnmpObject> snos,
-		final String charttitle, final boolean showdelta,
-		final int interval, final int age) {
-	this(sc, snos, snos, charttitle, showdelta, interval, age);
+    public SnmpChart(final SnmpController nsc, final List<SnmpObject> snos,
+		final String ctitle, final boolean delta,
+		final int ninterval, final int age) {
+	this(nsc, snos, snos, ctitle, delta, ninterval, age);
     }
 
     /**
      * Create a new SnmpChart, showing the rate of change of the given OIDs.
      *
-     * @param sc an SnmpController
+     * @param nsc an SnmpController
      * @param snos a List of oids to chart
      * @param tsnos a List of all oids, including those not charted
-     * @param charttitle the title to show on the chart
-     * @param showdelta if true, show rates instead of values
-     * @param interval the update interval in seconds
+     * @param ctitle the title to show on the chart
+     * @param delta if true, show rates instead of values
+     * @param ninterval the update interval in seconds
      * @param age the maximum age of the chart in seconds
      */
-    public SnmpChart(final SnmpController sc, final List<SnmpObject> snos,
-		final List<SnmpObject> tsnos, final String charttitle,
-		final boolean showdelta, final int interval, final int age) {
-	this.sc = sc;
-	this.showdelta = showdelta;
-	this.charttitle = charttitle;
-	this.interval = interval;
-	this.maxage = 1000 * age;
+    public SnmpChart(final SnmpController nsc, final List<SnmpObject> snos,
+		final List<SnmpObject> tsnos, final String ctitle,
+		final boolean delta, final int ninterval, final int age) {
+	sc = nsc;
+	showdelta = delta;
+	charttitle = ctitle;
+	interval = ninterval;
+	maxage = 1000 * age;
 	/*
 	 * The oids here are the numeric form. So, what we do is to put them
 	 * into a TreeMap with the pretty version as the key, so that they are
@@ -302,7 +302,7 @@ public final class SnmpChart extends AbstractTableModel
      * @param age The required maximum age in seconds.
      */
     public void setMaxAge(final int age) {
-	maxage = age * 1000;
+	maxage = 1000 * age;
 	for (TimeSeries ts : tsmap.values()) {
 	    ts.setMaximumItemAge(maxage);
 	}
@@ -355,10 +355,10 @@ public final class SnmpChart extends AbstractTableModel
     /**
      * Set the update delay.
      *
-     * @param interval the delay value in seconds
+     * @param ninterval the delay value in seconds
      */
-    public void setDelay(final int interval) {
-	this.interval = interval;
+    public void setDelay(final int ninterval) {
+	interval = ninterval;
 	if (timer != null) {
 	    timer.setDelay(interval * 1000);
 	}

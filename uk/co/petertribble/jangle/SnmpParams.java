@@ -66,51 +66,51 @@ public class SnmpParams {
      * Create an SnmpParams object referencing the given server with the
      * default community string "public" on the default port 161.
      *
-     * @param server the name of the server
+     * @param nserver the name of the server
      */
-    public SnmpParams(final String server) {
-	this(server, DEFAULT_COMMUNITY);
+    public SnmpParams(final String nserver) {
+	this(nserver, DEFAULT_COMMUNITY);
     }
 
     /**
      * Create an SnmpParams object referencing the given server with the
      * given community string on the default port 161.
      *
-     * @param server the name of the server
-     * @param community the community string to use when accessing this server
+     * @param nserver the name of the server
+     * @param ncommunity the community string to use when accessing this server
      */
-    public SnmpParams(final String server, final String community) {
-	this(server, community, DEFAULT_PORT);
+    public SnmpParams(final String nserver, final String ncommunity) {
+	this(nserver, ncommunity, DEFAULT_PORT);
     }
 
     /**
      * Create an SnmpParams object referencing the given server with the
      * given community string on the given port.
      *
-     * @param server the name of the server
-     * @param community the community string to use when accessing this server
-     * @param port the snmp port to connect to
+     * @param nserver the name of the server
+     * @param ncommunity the community string to use when accessing this server
+     * @param nport the snmp port to connect to
      */
-    public SnmpParams(final String server, final String community,
-		      final int port) {
-	this(server, community, port, SNMPV1);
+    public SnmpParams(final String nserver, final String ncommunity,
+		      final int nport) {
+	this(nserver, ncommunity, nport, SNMPV1);
     }
 
     /**
      * Create an SnmpParams object referencing the given server with the
      * given community string.
      *
-     * @param server the name of the server
-     * @param community the community string to use when accessing this server
-     * @param port the snmp port to connect to
-     * @param version the SNMP version to use
+     * @param nserver the name of the server
+     * @param ncommunity the community string to use when accessing this server
+     * @param nport the snmp port to connect to
+     * @param nversion the SNMP version to use
      */
-    public SnmpParams(final String server, final String community,
-		      final int port, final int version) {
-	this.server = server;
-	this.community = community;
-	this.port = port;
-	this.version = version;
+    public SnmpParams(final String nserver, final String ncommunity,
+		      final int nport, final int nversion) {
+	server = nserver;
+	community = ncommunity;
+	port = nport;
+	version = nversion;
     }
 
     /**

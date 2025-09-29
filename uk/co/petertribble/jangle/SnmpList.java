@@ -37,10 +37,10 @@ public class SnmpList {
     /**
      * Create a new SnmpList using the specified SnmpController.
      *
-     * @param sc the SnmpController to use to retrieve the data
+     * @param nsc the SnmpController to use to retrieve the data
      */
-    public SnmpList(final SnmpController sc) {
-	this.sc = sc;
+    public SnmpList(final SnmpController nsc) {
+	sc = nsc;
     }
 
     /**

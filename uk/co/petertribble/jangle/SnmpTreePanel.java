@@ -167,10 +167,10 @@ public final class SnmpTreePanel extends JPanel implements
     /**
      * Create a new SnmpTreePanel, starting exploration at the specified OID.
      *
-     * @param startOID the OID to start from
+     * @param initialOID the OID to start from
      */
-    public SnmpTreePanel(final String startOID) {
-	this.startOID = startOID;
+    public SnmpTreePanel(final String initialOID) {
+	startOID = initialOID;
 	setLayout(new BorderLayout());
 
 	jtpl = new JTabbedPane();
@@ -516,10 +516,10 @@ public final class SnmpTreePanel extends JPanel implements
     /**
      * Set the update interval.
      *
-     * @param interval the desired update delay in seconds
+     * @param ninterval the desired update delay in seconds
      */
-    public void setDelay(final int interval) {
-	this.interval = interval;
+    public void setDelay(final int ninterval) {
+	interval = ninterval;
 	if (timer != null) {
 	    timer.setDelay(interval * 1000);
 	}
@@ -537,10 +537,10 @@ public final class SnmpTreePanel extends JPanel implements
     /**
      * Set the chart display window.
      *
-     * @param age The required maximum chart age in seconds.
+     * @param nage The required maximum chart age in seconds.
      */
-    public void setMaxAge(final int age) {
-	this.age = age;
+    public void setMaxAge(final int nage) {
+	age = nage;
 	if (chart != null) {
 	    chart.setMaxAge(age);
 	}

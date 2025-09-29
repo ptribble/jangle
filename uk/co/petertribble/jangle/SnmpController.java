@@ -41,10 +41,10 @@ public class SnmpController {
      * Create a new SnmpController with parameters detailing how to
      * communicate with a server.
      *
-     * @param params an SnmpParams with connection details
+     * @param nparams an SnmpParams with connection details
      */
-    public SnmpController(final SnmpParams params) {
-	this.params = params;
+    public SnmpController(final SnmpParams nparams) {
+	params = nparams;
 	initialize();
     }
 

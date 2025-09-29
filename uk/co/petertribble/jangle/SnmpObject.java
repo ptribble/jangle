@@ -38,12 +38,13 @@ public class SnmpObject {
     /**
      * Create a new SnmpObject of the given OID and value.
      *
-     * @param oid the OID
-     * @param value the value of this object
+     * @param noid the OID
+     * @param nvalue the value of this object
      */
-    public SnmpObject(final SNMPObjectIdentifier oid, final SNMPObject value) {
-	this.oid = oid;
-	this.value = value;
+    public SnmpObject(final SNMPObjectIdentifier noid,
+		      final SNMPObject nvalue) {
+	oid = noid;
+	value = nvalue;
     }
 
     /**
@@ -69,12 +70,12 @@ public class SnmpObject {
     /**
      * Set the value of this SnmpObject.
      *
-     * @param value the new value of this SnmpObject
+     * @param nvalue the new value of this SnmpObject
      *
      * @see #getValue
      */
-    public void setValue(final SNMPObject value) {
-	this.value = value;
+    public void setValue(final SNMPObject nvalue) {
+	value = nvalue;
     }
 
     /**
