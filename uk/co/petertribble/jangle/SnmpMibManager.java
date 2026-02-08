@@ -14,16 +14,21 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jangle;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.io.File;
-import net.percederberg.mibble.*;
-import net.percederberg.mibble.value.*;
+import net.percederberg.mibble.Mib;
+import net.percederberg.mibble.MibLoader;
+import net.percederberg.mibble.MibSymbol;
+import net.percederberg.mibble.MibValue;
+import net.percederberg.mibble.MibValueSymbol;
+import net.percederberg.mibble.value.ObjectIdentifierValue;
 
 /**
  * SnmpMibManager provides a mechanism to load and query MIB files.
