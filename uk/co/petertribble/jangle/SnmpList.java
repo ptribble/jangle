@@ -31,7 +31,7 @@ import java.util.ArrayList;
  */
 public class SnmpList {
 
-    private SnmpController sc;
+    private final SnmpController sc;
     private List<SnmpObject> oidList;
 
     /**

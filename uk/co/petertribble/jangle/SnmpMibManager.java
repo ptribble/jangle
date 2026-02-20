@@ -39,10 +39,10 @@ public final class SnmpMibManager {
 
     private static SnmpMibManager smminstance;
 
-    private Map<String, String> oidMap;
-    private Map<String, String> oid2nameMap;
-    private Map<String, String> name2oidMap;
-    private MibLoader mibloader;
+    private final Map<String, String> oidMap;
+    private final Map<String, String> oid2nameMap;
+    private final Map<String, String> name2oidMap;
+    private final MibLoader mibloader;
 
     /**
      * Return the single instance of this SnmpMibManager.

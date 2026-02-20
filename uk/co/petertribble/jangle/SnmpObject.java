@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -32,7 +32,7 @@ import java.math.BigInteger;
  */
 public class SnmpObject {
 
-    private SNMPObjectIdentifier oid;
+    private final SNMPObjectIdentifier oid;
     private SNMPObject value;
 
     /**

@@ -38,7 +38,7 @@ import java.io.IOException;
  */
 public class SnmpController {
 
-    private SnmpParams params;
+    private final SnmpParams params;
     private SNMPv1CommunicationInterface ifv1;
     private SnmpException savedException;
 

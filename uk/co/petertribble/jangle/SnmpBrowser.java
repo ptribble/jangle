@@ -61,83 +61,83 @@ public final class SnmpBrowser extends JFrame implements ActionListener {
     /**
      * The main tree display.
      */
-    private SnmpTreePanel stp;
+    private final SnmpTreePanel stp;
 
     /**
      * A menu item to exit the application.
      */
-    private JMenuItem exitItem;
+    private final JMenuItem exitItem;
     /**
      * A menu item to open another cloned window.
      */
-    private JMenuItem cloneItem;
+    private final JMenuItem cloneItem;
     /**
      * A menu item to load MIBs into the application.
      */
-    private JMenuItem loadMibItem;
+    private final JMenuItem loadMibItem;
     /**
      * A menu item to close the current window.
      */
-    private JMenuItem closeItem;
+    private final JMenuItem closeItem;
     /**
      * A menu item to show the help.
      */
-    private JMenuItem helpItem;
+    private final JMenuItem helpItem;
     /**
      * A menu item to show the license.
      */
-    private JMenuItem licenseItem;
+    private final JMenuItem licenseItem;
 
     /**
      * A button to set the update interval to 5s.
      */
-    private JRadioButtonMenuItem sleepItem5;
+    private final JRadioButtonMenuItem sleepItem5;
     /**
      * A button to set the update interval to 15s.
      */
-    private JRadioButtonMenuItem sleepItem15;
+    private final JRadioButtonMenuItem sleepItem15;
     /**
      * A button to set the update interval to 30s.
      */
-    private JRadioButtonMenuItem sleepItem30;
+    private final JRadioButtonMenuItem sleepItem30;
     /**
      * A button to set the update interval to 1 minute.
      */
-    private JRadioButtonMenuItem sleepItem60;
+    private final JRadioButtonMenuItem sleepItem60;
 
     /**
      * A button to set the data retention to 30 minutes.
      */
-    private JRadioButtonMenuItem ageItem30m;
+    private final JRadioButtonMenuItem ageItem30m;
     /**
      * A button to set the data retention to 2 hours.
      */
-    private JRadioButtonMenuItem ageItem2h;
+    private final JRadioButtonMenuItem ageItem2h;
     /**
      * A button to set the data retention to 8 hours.
      */
-    private JRadioButtonMenuItem ageItem8h;
+    private final JRadioButtonMenuItem ageItem8h;
     /**
      * A button to set the data retention to 24 hours.
      */
-    private JRadioButtonMenuItem ageItem24h;
+    private final JRadioButtonMenuItem ageItem24h;
 
     /**
      * A field to enter the server name.
      */
-    private JTextField jtserver;
+    private final JTextField jtserver;
     /**
      * A field to enter the server port.
      */
-    private JingleIntTextField jtport;
+    private final JingleIntTextField jtport;
     /**
      * A field to enter the server community string.
      */
-    private JTextField jtcomm;
+    private final JTextField jtcomm;
     /**
      * A button that opens the connection to a server to load data.
      */
-    private JButton jbload;
+    private final JButton jbload;
 
     /**
      * Create an SNMP browser application.
