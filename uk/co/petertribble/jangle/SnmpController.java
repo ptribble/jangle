@@ -20,16 +20,16 @@
 
 package uk.co.petertribble.jangle;
 
+import java.io.IOException;
 import java.net.InetAddress;
-import java.net.UnknownHostException;
 import java.net.SocketException;
+import java.net.UnknownHostException;
 import snmp.SNMPBadValueException;
 import snmp.SNMPGetException;
-import snmp.SNMPSequence;
 import snmp.SNMPObjectIdentifier;
+import snmp.SNMPSequence;
 import snmp.SNMPVarBindList;
 import snmp.SNMPv1CommunicationInterface;
-import java.io.IOException;
 
 /**
  * A control class to manage Snmp queries.

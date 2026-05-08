@@ -14,14 +14,14 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jangle;
 
-import java.util.List;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A class to hold a list of SnmpObjects retrieved from a server, and

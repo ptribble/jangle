@@ -35,7 +35,6 @@ public final class SnmpWalk {
     private static String host = "localhost";
     private static boolean debug;
 
-
     private SnmpWalk() {
     }
 

@@ -14,14 +14,14 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
 package uk.co.petertribble.jangle;
 
-import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
+import javax.swing.DefaultListCellRenderer;
 import javax.swing.JList;
 
 /**

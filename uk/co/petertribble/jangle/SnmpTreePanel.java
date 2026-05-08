@@ -20,10 +20,13 @@
 
 package uk.co.petertribble.jangle;
 
-import java.util.Map;
+import java.awt.BorderLayout;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.ArrayList;
+import java.util.Map;
 import javax.swing.DefaultListModel;
 import javax.swing.Icon;
 import javax.swing.JList;
@@ -37,17 +40,14 @@ import javax.swing.JTable;
 import javax.swing.JTree;
 import javax.swing.SwingWorker;
 import javax.swing.Timer;
-import javax.swing.tree.DefaultTreeModel;
-import javax.swing.tree.TreePath;
-import java.awt.BorderLayout;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import javax.swing.event.ListSelectionEvent;
 import javax.swing.event.ListSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
-import uk.co.petertribble.jingle.JingleTextPane;
+import javax.swing.tree.DefaultTreeModel;
+import javax.swing.tree.TreePath;
 import org.jfree.chart.ChartPanel;
+import uk.co.petertribble.jingle.JingleTextPane;
 
 /**
  * A panel displaying the snmp statistics that are available as a list or

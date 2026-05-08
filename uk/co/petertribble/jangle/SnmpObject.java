@@ -20,10 +20,10 @@
 
 package uk.co.petertribble.jangle;
 
-import snmp.SNMPObjectIdentifier;
-import snmp.SNMPObject;
-import snmp.SNMPInteger;
 import java.math.BigInteger;
+import snmp.SNMPInteger;
+import snmp.SNMPObject;
+import snmp.SNMPObjectIdentifier;
 
 /**
  * Represent the data held by a node in an SNMP tree.

@@ -15,10 +15,10 @@
 
 /**
  * This package provides applications querying SNMP for Java.
- * <p>
- * There are a couple of standalone utilities in SnmpWalk and SnmpPing.
- * <p>
- * The main interactive browser is in SnmpBrowser, supported by the other
+ *
+ * <p>There are a couple of standalone utilities in SnmpWalk and SnmpPing.
+ *
+ * <p>The main interactive browser is in SnmpBrowser, supported by the other
  * classes here.
  */
 package uk.co.petertribble.jangle;

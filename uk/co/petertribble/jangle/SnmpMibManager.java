@@ -20,9 +20,9 @@
 
 package uk.co.petertribble.jangle;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
-import java.io.File;
 import net.percederberg.mibble.Mib;
 import net.percederberg.mibble.MibLoader;
 import net.percederberg.mibble.MibSymbol;
