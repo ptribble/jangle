@@ -60,6 +60,23 @@ public final class SnmpTreePanel extends JPanel implements
         TreeSelectionListener, ListSelectionListener, ActionListener {
 
     private static final long serialVersionUID = 1L;
+    private static final int TAB_D = 0;
+    private static final int TAB_A = 1;
+    private static final int TAB_S = 2;
+    private static final int TAB_C = 3;
+
+    /**
+     * Hold the main chart.
+     */
+    JPanel jp2;
+    /**
+     * Save errors so we can give friendlier error feedback.
+     */
+    Exception savederror;
+    /**
+     * Shows loading progress.
+     */
+    JProgressBar jpb;
 
     /**
      * Object description.
@@ -73,10 +90,6 @@ public final class SnmpTreePanel extends JPanel implements
      * Hold the main details.
      */
     private JPanel jp1;
-    /**
-     * Hold the main chart.
-     */
-    JPanel jp2;
     /**
      * A chart for the current OID.
      */
@@ -117,11 +130,6 @@ public final class SnmpTreePanel extends JPanel implements
     private SnmpChart cchart;
 
     /**
-     * Save errors so we can give friendlier error feedback.
-     */
-    Exception savederror;
-
-    /**
      * The OIDs as a list.
      */
     private JList<SnmpObject> slist;
@@ -129,10 +137,6 @@ public final class SnmpTreePanel extends JPanel implements
      * The model backing th OIDs as a list.
      */
     private DefaultListModel<SnmpObject> model;
-    /**
-     * Shows loading progress.
-     */
-    JProgressBar jpb;
     /**
      * The left tabbed pane, holding the tree and list of OIDs.
      */
@@ -145,10 +149,6 @@ public final class SnmpTreePanel extends JPanel implements
      * The OIDs as a tree.
      */
     private JTree stree;
-    private static final int TAB_D = 0;
-    private static final int TAB_A = 1;
-    private static final int TAB_S = 2;
-    private static final int TAB_C = 3;
 
     /**
      * The OID to start walking from.

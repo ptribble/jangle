@@ -44,18 +44,6 @@ public final class SnmpMibManager {
     private final Map<String, String> name2oidMap;
     private final MibLoader mibloader;
 
-    /**
-     * Return the single instance of this SnmpMibManager.
-     *
-     * @return the single instance of this SnmpMibManager
-     */
-    public static synchronized SnmpMibManager getInstance() {
-	if (smminstance == null) {
-	    smminstance = new SnmpMibManager();
-	}
-	return smminstance;
-    }
-
     private SnmpMibManager() {
 	oidMap = new HashMap<>();
 	oid2nameMap = new HashMap<>();
@@ -69,6 +57,18 @@ public final class SnmpMibManager {
 	readMIBs("/usr/share/snmp/mibs");
 	// my own systems
 	readMIBs("/opt/Net-SNMP/share/snmp/mibs");
+    }
+
+    /**
+     * Return the single instance of this SnmpMibManager.
+     *
+     * @return the single instance of this SnmpMibManager
+     */
+    public static synchronized SnmpMibManager getInstance() {
+	if (smminstance == null) {
+	    smminstance = new SnmpMibManager();
+	}
+	return smminstance;
     }
 
     private void readMIBs(final String location) {
