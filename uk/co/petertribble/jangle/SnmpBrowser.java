@@ -20,10 +20,6 @@
 
 package uk.co.petertribble.jangle;
 
-import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_COMMUNITY;
-import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_HOST;
-import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_PORT;
-
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 import java.awt.event.ActionEvent;
@@ -47,6 +43,10 @@ import javax.swing.SwingWorker;
 import uk.co.petertribble.jingle.JingleInfoFrame;
 import uk.co.petertribble.jingle.JingleIntTextField;
 import uk.co.petertribble.jingle.JingleMultiFrame;
+
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_COMMUNITY;
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_HOST;
+import static uk.co.petertribble.jangle.SnmpParams.DEFAULT_PORT;
 
 /**
  * A graphical utility to browse and display snmp statistics. It allows the

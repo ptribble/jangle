@@ -14,7 +14,7 @@
  *
  * CDDL HEADER END
  *
- * Copyright 2025 Peter Tribble
+ * Copyright 2026 Peter Tribble
  *
  */
 
@@ -29,8 +29,8 @@ import java.util.ResourceBundle;
  */
 public final class SnmpResources {
 
-    private static final ResourceBundle SNMPRES =
-				ResourceBundle.getBundle("properties/jangle");
+    private static final ResourceBundle SNMPRES
+				= ResourceBundle.getBundle("properties/jangle");
 
     private SnmpResources() {
     }

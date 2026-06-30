@@ -56,8 +56,7 @@ public class SnmpController {
     private void initialize() {
 	try {
 	    InetAddress hostAddress = InetAddress.getByName(params.getServer());
-	    ifv1 =
-		new SNMPv1CommunicationInterface(params.getVersion(),
+	    ifv1 = new SNMPv1CommunicationInterface(params.getVersion(),
 						hostAddress,
 						params.getCommunity(),
 						params.getPort());
@@ -157,8 +156,8 @@ public class SnmpController {
 	    return null;
 	}
 	SNMPSequence pair = (SNMPSequence) newVars.getSNMPObjectAt(0);
-	SNMPObjectIdentifier snmpOID =
-		(SNMPObjectIdentifier) pair.getSNMPObjectAt(0);
+	SNMPObjectIdentifier snmpOID
+		= (SNMPObjectIdentifier) pair.getSNMPObjectAt(0);
 	return new SnmpObject(snmpOID, pair.getSNMPObjectAt(1));
     }
 }

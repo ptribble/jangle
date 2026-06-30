@@ -107,6 +107,20 @@ public final class SnmpChart extends AbstractTableModel
     }
 
     /**
+     * Create a new SnmpChart, showing the rate of change of the given OIDs.
+     *
+     * @param nsc an SnmpController
+     * @param oids a List of oids to show
+     * @param ctitle the title to show on the chart
+     * @param ninterval the update interval in seconds
+     * @param age the maximum age of the chart in seconds
+     */
+    public SnmpChart(final SnmpController nsc, final List<SnmpObject> oids,
+		final String ctitle, final int ninterval, final int age) {
+	this(nsc, oids, ctitle, true, ninterval, age);
+    }
+
+    /**
      * Create a new SnmpChart, showing the given oid.
      *
      * @param nsc an SnmpController
@@ -127,20 +141,6 @@ public final class SnmpChart extends AbstractTableModel
 	List<String> oids = new ArrayList<>();
 	oids.add(oid);
 	initialize(oids, oids);
-    }
-
-    /**
-     * Create a new SnmpChart, showing the rate of change of the given OIDs.
-     *
-     * @param nsc an SnmpController
-     * @param oids a List of oids to show
-     * @param ctitle the title to show on the chart
-     * @param ninterval the update interval in seconds
-     * @param age the maximum age of the chart in seconds
-     */
-    public SnmpChart(final SnmpController nsc, final List<SnmpObject> oids,
-		final String ctitle, final int ninterval, final int age) {
-	this(nsc, oids, ctitle, true, ninterval, age);
     }
 
     /**
